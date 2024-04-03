@@ -1,0 +1,96 @@
+<div class="container-fluid contenedor-panel">
+    <div class="row row-panel">
+
+        <div class="col-xl-3 col-items">
+                <div class="sidenav">
+                    <a href="#">Inicio</a>
+                    <a href="#">Nuevo Libro</a>
+                    <a href="#">Configuración</a>
+                </div>
+        </div>
+
+
+        <div class="col-xl-9 col-formulario">
+            <h1>Crear Libro</h1>
+
+            <form action="">
+                
+                <div class="form-group">
+                    <label for="nombre" class="form-label">Nombre: </label>
+                    
+                    <input type="text" [formControl]="nombre" class="form-control" placeholder="Por favor ingrese su nombre" id="nombre" required>
+
+                    <div class="alert alert-danger" [hidden]="nombre.valid || nombre.pristine">
+                        El nombre es obligatorio
+                    </div>
+
+
+                </div>
+
+                <div class="form-group">
+                    <label for="edad" class="form-label">Edad: </label>
+                    <input type="number" [formControl]="edad"  class="form-control" id="edad" required>
+
+                    <div class="alert alert-danger" [hidden]="edad.valid || edad.pristine">
+                        Ingrese su edad, deber ser mayor de 18 años
+                    </div>
+
+
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">Email: </label>
+                    <input type="email" class="form-control" [formControl]="email" placeholder="Por favor ingrese su email" id="email" required>
+
+                    <div class="alert alert-danger" [hidden]="email.valid || email.pristine">
+                        <span *ngIf="email.errors?.['required']" >El email es obligatorio</span>
+                        <br>
+                        <span *ngIf="email.errors?.['pattern']">El email debe ser valido</span>
+                    </div>
+
+
+                </div>
+                
+                <button class="btn btn-primary" [disabled]="nombre.invalid || edad.invalid || email.invalid">Enviar</button>
+                
+                
+
+            </form>
+
+            
+
+
+
+            <!-- <form [formGroup]="formularioCreacion"  (submit)="onSubmit()">
+                <div class="form-group">
+                    <label for="id">ID: </label>
+                    <input type="number" class="form-control" id="id" name="id"  formControlName="id" required>
+                </div>
+                <div class="form-group">
+                    <label for="titulo">Titulo:</label>
+                    <input type="text" class="form-control" id="titulo" name="titulo" formControlName="titulo" required>
+                    <div class="text-danger" *ngIf="hasErrors('titulo', 'required')"> Titulo requerido</div>
+                </div>
+                <div class="form-group">
+                    <label for="autor">Autor:</label>
+                    <input type="text" class="form-control" id="autor" name="autor"  formControlName="autor"   required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">descripcion:</label>
+                    <input type="text" class="form-control" id="descripcion" name="descripcion"  formControlName="descripcion" required>
+                </div>
+                <div class="form-group">
+                    <label for="precio">Precio: </label>
+                    <input type="number" class="form-control" id="precio" name="precio" formControlName="precio" required>
+                </div>
+                <div class="form-group">
+                    <label for="portada">Portada:</label>
+                    <input type="text" class="form-control-file" id="portada" name="portada" formControlName="portada" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Crear Libro</button>
+            </form> -->
+                
+        </div>
+
+    </div>
+</div>

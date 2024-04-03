@@ -1,0 +1,118 @@
+*{
+    font-family: "Raleway"
+}
+
+
+.contenedor-general {
+    display: flex;
+    justify-content: center;
+}
+
+
+.row-general {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.col-titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+}
+
+.col-titulo p {
+    font-weight: 700;
+    font-size: 30px;
+}
+
+
+
+
+.col-lista-libros {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.row-lista-libros{
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+.col-libros{
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+}
+
+
+
+
+/* card de libros */
+
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2em;
+    width: 340px;
+    height: 460px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    transition: box-shadow 0.0s ease-in-out; 
+    
+}
+
+
+.card:hover {
+    transform: scale(1.01); /* Aumenta ligeramente el tamaño al pasar el mouse */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top{
+    width: 80%;
+    height: 300px;
+}
+
+
+.card-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2em;
+}
+
+
+.card-body h5{
+    font-weight: 500;
+    font-size: 1.2em; /* Tamaño del título */
+    max-width: 200px; /* Ancho máximo del título */
+    overflow: hidden; /* Para que el texto que sobrepase el ancho máximo se oculte */
+    white-space:inherit; /* Para que el texto no se divida en múltiples líneas */
+    text-overflow: ellipsis; /* Para que se muestre un elipsis (...) si el texto es demasiado largo */
+}
+
+.card-body  p {
+    font-size: 1em; /* Tamaño de la descripción */
+    max-width: 200px; /* Ancho máximo de la descripción */
+    max-height: 3em; /* Altura máxima de la descripción */
+    overflow: hidden; /* Para que el texto que sobrepase la altura máxima se oculte */
+    text-overflow: ellipsis; /* Para que se muestre un elipsis (...) si el texto es demasiado largo */
+    font-weight: 800;
+    background-color: rgb(59, 49, 119);
+    border-radius: 1em;
+    width: 33%;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+ 
+
+

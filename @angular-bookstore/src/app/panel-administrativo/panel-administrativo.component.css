@@ -1,0 +1,52 @@
+
+.contenedor-panel {
+    background-color: rgb(61, 61, 61);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.row-panel {
+    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-color: green;
+}
+
+.col-items {
+    background-color: rgb(32, 32, 32);
+}
+
+.col-formulario {
+    background-color: rgb(255, 255, 255);
+    padding: 2em;
+}
+
+
+
+
+/* sidenav */
+
+.sidenav {
+    width: 250px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #292929;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #ffffff;
+    display: block;
+}
+
+.sidenav a:hover {
+    background-color: #676869;
+}

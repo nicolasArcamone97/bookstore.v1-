@@ -1,0 +1,24 @@
+<div class="container contenedor-general">
+    <div class="row row-general">
+        <div class="col col-titulo">
+            <p>Lista de libros</p>            
+        </div>
+        <div class="col col-lista-libros">
+            <div class="row row-lista-libros">
+                <!-- Utiliza una columna para cada libro -->
+                <div class="col-sm-12 col-md-6 col-xl-4 col-libros" *ngFor="let libro of libros">
+                   
+                    <div class="card" style="cursor: pointer"  [routerLink]="['/libro', libro.id]" >
+                        <img [src]="libro.portada"  class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ libro.titulo }} - {{ libro.autor }}</h5>
+                            <p class="card-text">${{ libro.precio | number: '1.3'}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

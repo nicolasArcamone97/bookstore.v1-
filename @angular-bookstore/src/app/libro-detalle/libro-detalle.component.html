@@ -1,0 +1,99 @@
+<div class="container-fluid contenedor-detalle-libro" >
+    <!-- arranca fila  -->
+    <div class="row row-general" *ngIf="libroSeleccionado">
+        <!-- arranca col 1 de 3 -->
+        <div class="col-xl-4 col-imagen" >
+            <img [src]="libroSeleccionado.portada" alt="">
+        </div>
+        <!-- termina col 1 de 3 -->
+
+        <!-- arranca col 2 de 3 -->
+        <div class="col-xl-4 col-detalle-libro">
+            <!-- arranca fila  -->
+            <div class="row row-detalle-libro">
+                <div class="col col-titulo">
+                    <p>{{libroSeleccionado.titulo}}</p>
+                </div>
+                
+                <div class="col col-precio" style="font-family: 'Raleway'  ;">
+                    <p>${{libroSeleccionado.precio | number:'1.2'}}</p>
+                </div>
+
+                <div class="col col-descripcion">
+                    <p>{{libroSeleccionado.descripcion}}</p>
+                </div>
+
+                <div class="col col-caracteristicas">
+                    <h3 style="font-weight: bold;">Caracteristicas</h3>
+                    <table class="table table-striped">
+                          <tbody>
+                            <tr>
+                              <th scope="row">Año de publicación</th>
+                              <td>2023</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Tapa del libro</th>
+                              <td>Blanda</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Número de página</th>
+                              <td colspan="2">400</td>
+                            </tr>
+                          </tbody>
+                    </table>
+                </div>
+
+                
+            </div>
+            <!-- termina fila -->
+        </div>
+        <!-- termina col 2 de 3 -->
+
+        <!-- arranca col 3 de 3 -->
+        <div class="col-xl-4 col-compra">
+            <!-- arranca fila  -->
+            <div class="row row-compra">
+                <div class="col col-compra-envio">
+                    <h3>Envio gratis a todo el país</h3>
+                    <p>Conocé los tiempos y las formas de enviío</p>
+                    <a href=""> Calcular cuando llega</a>
+                </div>
+
+                <div class="col col-compra-stock">
+                    <h3>stock disponible</h3>
+                    <h5>cantidad disponible</h5>
+                    <p>(35 disponibles)</p>
+                </div>
+
+                <div class="col col-compra-botones">
+                    <button class="btn btn-primary">Comprar</button>
+                    <button class="btn btn-primary">Agregar al carro</button>
+                </div>
+
+            </div>
+            <!-- termina fila -->
+        </div>
+        <!-- termina col 2 de 3 -->
+    </div>
+    <!-- termina fila -->
+</div>
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="card" style="width: 18rem;">
+    <img [src]="libroSeleccionado.portada" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{libroSeleccionado.titulo}}</h5>
+      <p class="card-text">{{libroSeleccionado.descripcion}}</p>
+      <p>Precio: ${{libroSeleccionado.precio}}</p>
+      <a class="btn btn-primary">Comprar</a>
+    </div>
+  </div> -->
