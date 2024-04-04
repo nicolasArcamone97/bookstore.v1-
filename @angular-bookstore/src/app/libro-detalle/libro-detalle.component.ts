@@ -18,10 +18,14 @@ export class LibroDetalleComponent implements OnInit {
 
  ngOnInit(): void {
    this._route.params.subscribe(params => {
-    this.libroSeleccionado = this._serviceLibro.obtenerLibro(params['id'])
-    console.log(this.libroSeleccionado)
+     this._serviceLibro.obtenerLibro(Number(params['id'])).subscribe((data: Libro) => {
+        this.libroSeleccionado = data
+     })
    })
  }
 
+
+
+ 
 
 }

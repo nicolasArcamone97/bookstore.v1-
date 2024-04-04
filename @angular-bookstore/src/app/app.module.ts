@@ -11,7 +11,8 @@ import { LibroDetalleComponent } from './libro-detalle/libro-detalle.component';
 import { ListaLibrosComponent } from './lista-libros/lista-libros.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { PanelAdministrativoComponent } from './panel-administrativo/panel-administrativo.component';
-
+import {HttpClientModule} from '@angular/common/http';
+import { ListFavoritosComponent } from './list-favoritos/list-favoritos.component'
 
 @NgModule({
   declarations: [
@@ -22,8 +23,10 @@ import { PanelAdministrativoComponent } from './panel-administrativo/panel-admin
     ListaLibrosComponent,
     CategoriaComponent,
     PanelAdministrativoComponent,
+    ListFavoritosComponent,
   ],
   imports: [
+    HttpClientModule,
     FormsModule,      //formularios de tipo plantilla
     ReactiveFormsModule,    //formularios de tipo reactivo
     BrowserModule,

@@ -20,6 +20,12 @@
               <a class="dropdown-item" *ngFor="let categoria of categorias" style="cursor: pointer;" [routerLink]="['/categoria', categoria.id]">{{ categoria.nombre }}</a>
             </div>
           </li>
+
+          <li class="nav-item me-3 me-lg-1">
+            <a class="nav-link" href="#">
+              <span><i class="bi bi-bookmark-star" style="color: yellow;"></i></span>
+            </a>
+          </li>
         </ul>
         <form class="d-flex">
           <input class="form-control me-sm-2" type="search" placeholder="Search">

@@ -29,7 +29,9 @@ export class ListaLibrosComponent {
   
   // opbtengo los libros de un servicio 
   obtenerLibros(){
-    this.libros = this._serviceLibros.obtenerLibros()
+    this._serviceLibros.obtenerLibros().subscribe(data => {
+      this.libros = data
+    })
   }
 
 

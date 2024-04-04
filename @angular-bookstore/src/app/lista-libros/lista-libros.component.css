@@ -108,10 +108,11 @@
     font-weight: 800;
     background-color: rgb(59, 49, 119);
     border-radius: 1em;
-    width: 33%;
+    width: 50%;
     justify-content: center;
     text-align: center;
     color: #fff;
+    margin-top: 10px;
 }
  
 

@@ -13,14 +13,14 @@
         <div class="col-xl-9 col-formulario">
             <h1>Crear Libro</h1>
 
-            <form action="">
+            <!-- <form [formGroup]="formularioCreacion" (ngSubmit)="enviar()">
                 
                 <div class="form-group">
                     <label for="nombre" class="form-label">Nombre: </label>
                     
-                    <input type="text" [formControl]="nombre" class="form-control" placeholder="Por favor ingrese su nombre" id="nombre" required>
+                    <input [ngClass]="{'is-invalid': hasErrors('nombre','required')}"  type="text" formControlName="nombre"        class="form-control" placeholder="Por favor ingrese su nombre" id="nombre" required>
 
-                    <div class="alert alert-danger" [hidden]="nombre.valid || nombre.pristine">
+                    <div class="text-danger" *ngIf="hasErrors('nombre','required')">
                         El nombre es obligatorio
                     </div>
 
@@ -29,9 +29,9 @@
 
                 <div class="form-group">
                     <label for="edad" class="form-label">Edad: </label>
-                    <input type="number" [formControl]="edad"  class="form-control" id="edad" required>
+                    <input [ngClass]="{'is-invalid': hasErrors('edad','required')}"  type="number" formControlName="edad"  class="form-control" id="edad" required>
 
-                    <div class="alert alert-danger" [hidden]="edad.valid || edad.pristine">
+                    <div class="text-danger" *ngIf="hasErrors('edad','required')">
                         Ingrese su edad, deber ser mayor de 18 años
                     </div>
 
@@ -40,55 +40,60 @@
 
                 <div class="form-group">
                     <label for="email" class="form-label">Email: </label>
-                    <input type="email" class="form-control" [formControl]="email" placeholder="Por favor ingrese su email" id="email" required>
+                    <input [ngClass]="{'is-invalid': hasErrors('email','required')}"  
+                           [ngClass]="{'is-invalid': hasErrors('email','pattern')}"
+                    type="email" class="form-control" formControlName="email" placeholder="Por favor ingrese su email" id="email" required>
 
-                    <div class="alert alert-danger" [hidden]="email.valid || email.pristine">
-                        <span *ngIf="email.errors?.['required']" >El email es obligatorio</span>
+                    <div class="alert text-danger" >
+                        <span *ngIf="hasErrors('email','required')">El email es obligatorio</span>
                         <br>
-                        <span *ngIf="email.errors?.['pattern']">El email debe ser valido</span>
+                        <span *ngIf="hasErrors('email','pattern')">El email debe ser valido</span>
                     </div>
 
 
                 </div>
+                <!-- [disabled]="nombre.invalid || edad.invalid || email.invalid" -->
+                <!-- <button class="btn btn-primary">Enviar</button> -->
                 
-                <button class="btn btn-primary" [disabled]="nombre.invalid || edad.invalid || email.invalid">Enviar</button>
-                
                 
 
-            </form>
-
-            
+            <!-- </form> --> 
 
 
 
-            <!-- <form [formGroup]="formularioCreacion"  (submit)="onSubmit()">
-                <div class="form-group">
-                    <label for="id">ID: </label>
-                    <input type="number" class="form-control" id="id" name="id"  formControlName="id" required>
-                </div>
-                <div class="form-group">
+
+            <form [formGroup]="formularioCreacion"  (submit)="enviar()">
+                <div class="mb-3 form-group">
                     <label for="titulo">Titulo:</label>
                     <input type="text" class="form-control" id="titulo" name="titulo" formControlName="titulo" required>
                     <div class="text-danger" *ngIf="hasErrors('titulo', 'required')"> Titulo requerido</div>
                 </div>
-                <div class="form-group">
+                <div class="mb-3 form-group">
                     <label for="autor">Autor:</label>
                     <input type="text" class="form-control" id="autor" name="autor"  formControlName="autor"   required>
+                    <div class="text-danger" *ngIf="hasErrors('autor', 'required')"> Titulo requerido</div>
+
                 </div>
-                <div class="form-group">
+                <div class="mb-3 form-group">
                     <label for="descripcion">descripcion:</label>
                     <input type="text" class="form-control" id="descripcion" name="descripcion"  formControlName="descripcion" required>
+                    <div class="text-danger" *ngIf="hasErrors('descripcion', 'required')"> Titulo requerido</div>
                 </div>
+                <div class="mb-3 form-group">
+                    <label for="portada">Portada:</label>
+                    <input type="text" class="form-control-file" id="portada" name="portada" formControlName="portada" required>
+                    <div class="text-danger" *ngIf="hasErrors('portada', 'required')"> Titulo requerido</div>
+                </div>
+
                 <div class="form-group">
                     <label for="precio">Precio: </label>
                     <input type="number" class="form-control" id="precio" name="precio" formControlName="precio" required>
+                    <div class="text-danger" *ngIf="hasErrors('precio', 'required')"> Titulo requerido</div>
                 </div>
-                <div class="form-group">
-                    <label for="portada">Portada:</label>
-                    <input type="text" class="form-control-file" id="portada" name="portada" formControlName="portada" required>
-                </div>
+                
+                
                 <button type="submit" class="btn btn-primary">Crear Libro</button>
-            </form> -->
+            </form>
                 
         </div>
 
