@@ -34,8 +34,8 @@ export class LibroService {
 
 
     // funcion para crear un libro
-    public createLibro(libro:Libro){
-        const libroExistente = this.libroRepository.findOneBy({titulo: libro.titulo}) 
+    public async createLibro(libro:Libro){
+        const libroExistente = await this.libroRepository.findOneBy({titulo: libro.titulo}) 
 
         // esto verifica si el libroExistene es flasy, osea undefind, null o Nan
         // lo cual siginifica que si es true, es porque es lo anterior entonces no existe en la base de datos

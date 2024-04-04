@@ -13,6 +13,15 @@ export class Libro {
     @Column()
     autor:string
 
+    @Column()
+    descripcion: string
+
+    @Column({default:0, nullable:false})
+    precio: number
+
+    @Column()
+    portada: string
+
     @CreateDateColumn()
     created_at:Date
 
