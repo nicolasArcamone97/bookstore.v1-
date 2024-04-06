@@ -5,14 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NavegacionComponent } from './navegacion/navegacion.component';
-import { FooterComponent } from './footer/footer.component';
-import { LibroDetalleComponent } from './libro-detalle/libro-detalle.component';
-import { ListaLibrosComponent } from './lista-libros/lista-libros.component';
-import { CategoriaComponent } from './categoria/categoria.component';
-import { PanelAdministrativoComponent } from './panel-administrativo/panel-administrativo.component';
+import { NavegacionComponent } from './components/navegacion/navegacion.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { LibroDetalleComponent } from './components/libro-detalle/libro-detalle.component';
+import { ListaLibrosComponent } from './components/lista-libros/lista-libros.component';
+import { CategoriaComponent } from './components/categoria/categoria.component';
+import { PanelAdministrativoComponent } from './components/panel-administrativo/panel-administrativo.component';
 import {HttpClientModule} from '@angular/common/http';
-import { ListFavoritosComponent } from './list-favoritos/list-favoritos.component'
+import { ListFavoritosComponent } from './components/list-favoritos/list-favoritos.component'
 
 @NgModule({
   declarations: [

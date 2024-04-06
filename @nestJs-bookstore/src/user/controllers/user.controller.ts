@@ -1,8 +1,9 @@
-import { Body, Controller, Get, NotFoundException, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, NotFoundException, Param, Post } from '@nestjs/common';
 import { UserService } from '../service/user.service';
 import { CreateUserDTO } from '../dto/user.dto';
 import { Auth } from 'src/auth/decorators/auth.decorator';
 import { Role } from 'src/auth/role.enum';
+import { Libro } from 'src/libro/entities/libro.entity';
 
 @Controller('user')
 export class UserController {
@@ -31,4 +32,10 @@ export class UserController {
         return this.userService.asignarLibro(body.usuarioId, body.libroId)
     }
     
+    @Delete(':userId/libro/:libroId')
+    deleteLibro(@Param('userId') usuarioId: number, @Param('libroId') LibroId:number){
+        return this.userService.eliminarLibro(usuarioId,LibroId)
+    }
+
+
 }

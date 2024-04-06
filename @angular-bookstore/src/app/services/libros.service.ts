@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Libro } from '../libro.interfaz';
+
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Libro } from 'src/interfaces/libro.interface';
 
 @Injectable({
   providedIn: 'root'

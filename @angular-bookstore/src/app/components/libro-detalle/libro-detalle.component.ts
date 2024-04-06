@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Libro } from '../libro.interfaz';
-import { LibrosService } from '../services/libros.service';
+
+import { LibrosService } from '../../services/libros.service';
+import { Libro } from 'src/interfaces/libro.interface';
 
 @Component({
   selector: 'app-libro-detalle',
@@ -11,7 +12,6 @@ import { LibrosService } from '../services/libros.service';
 export class LibroDetalleComponent implements OnInit {
   
   libroSeleccionado?: Libro
-
 
  constructor(private _route: ActivatedRoute,
             private _serviceLibro: LibrosService){}

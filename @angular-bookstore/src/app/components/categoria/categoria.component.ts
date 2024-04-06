@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Libro } from '../libro.interfaz';
-import { CategoriaService } from '../services/categoria.service';
+
+import { CategoriaService } from '../../services/categoria.service';
 import { ActivatedRoute } from '@angular/router';
-import { Categoria } from '../categoria.interface';
+import { Libro } from 'src/interfaces/libro.interface';
 
 @Component({
   selector: 'app-categoria',
@@ -11,7 +11,7 @@ import { Categoria } from '../categoria.interface';
 })
 export class CategoriaComponent implements OnInit{
 
-  categoria?: Categoria
+  categoria?: string
 
   librosCategoria?: Libro[]
 
@@ -19,10 +19,10 @@ export class CategoriaComponent implements OnInit{
               private _route: ActivatedRoute){}
 
   ngOnInit(): void {
-    this._route.params.subscribe(params => {
-      this.categoria = this._serviceCategoria.obtenerCategoria(params['id'])
-      this.librosCategoria = this._serviceCategoria.obtenerLibrosCategoria(params['id'])
-    })
+    // this._route.params.subscribe(params => {
+    //   this.categoria = this._serviceCategoria.obtenerCategoria(params['id'])
+    //   this.librosCategoria = this._serviceCategoria.obtenerLibrosCategoria(params['id'])
+    // })
   }
 
 

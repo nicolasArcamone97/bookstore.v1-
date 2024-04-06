@@ -5,30 +5,41 @@
 
 .contenedor-general {
     display: flex;
+    width: 100%;
     justify-content: center;
+    flex-direction: column;
+    box-shadow: 0px 5px 5px 8px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(rgba(78, 78, 78, 0.7),rgba(54, 54, 54, 0.7)), url('https://i.pinimg.com/564x/81/60/d9/8160d9a490cce2232b970144ff0ecc87.jpg');
+    align-items: center;
+
+
 }
 
 
 .row-general {
     display: flex;
+    width: 80%;
     justify-content: center;
     flex-direction: column;
+    box-shadow: 0px 1px 3px 3px rgba(0, 0, 0, 0.5);
+     background: #e8e6e5;
 }
 
 
+
 .col-titulo {
+    margin-top: 2em;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 3em;
+    width: 100%;
 }
 
 .col-titulo p {
     font-weight: 700;
     font-size: 30px;
+    color: #14b614;
 }
-
-
 
 
 .col-lista-libros {
@@ -41,14 +52,13 @@
 .row-lista-libros{
     display: flex;
     justify-content: center;
-    
+    width: 100%;
 }
 
 
 .col-libros{
     display: flex;
     justify-content: center;
-    padding: 2em;
 }
 
 
@@ -64,12 +74,12 @@
     margin: 2em;
     width: 340px;
     height: 460px;
-    border: 1px solid #ccc;
-    background-color: #ffffff;
+    background:#a8967b;
     transition: box-shadow 0.0s ease-in-out; 
-    
+    border-radius: 0;
 }
 
+/*  */
 
 .card:hover {
     transform: scale(1.01); /* Aumenta ligeramente el tamaño al pasar el mouse */
@@ -77,8 +87,9 @@
 }
 
 .card-img-top{
-    width: 80%;
-    height: 300px;
+    max-width: 100%;
+    max-height: 280px;
+    border-radius: 0;
 }
 
 
@@ -86,13 +97,16 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 2em;
+    width: 90%;
+    max-height: 300px;    
 }
 
+/* color:#AFBD94; */
 
 .card-body h5{
+    color:#42998E;
     font-weight: 500;
-    font-size: 1.2em; /* Tamaño del título */
+    font-size: 1em; /* Tamaño del título */
     max-width: 200px; /* Ancho máximo del título */
     overflow: hidden; /* Para que el texto que sobrepase el ancho máximo se oculte */
     white-space:inherit; /* Para que el texto no se divida en múltiples líneas */
@@ -111,9 +125,25 @@
     width: 50%;
     justify-content: center;
     text-align: center;
-    color: #fff;
+    color:#C1FEF6;
     margin-top: 10px;
 }
  
+.card-body a {
+    display: flex;
+    justify-content: end;
+    font-size: 30px;
+}
 
 
+.card-body .bi{
+    color: #4b83b6;
+}
+
+.card-body .bi i:hover {
+    color: #4b83b6
+}
+
+.card-body .bi i:active {
+    color: #4b83b6;
+}

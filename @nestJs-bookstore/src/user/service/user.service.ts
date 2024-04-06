@@ -87,7 +87,7 @@ export class UserService {
             const libroExistente = usuario.libros.find(libr => libr.id === librito.id)
         
 
-            // si libroExistente no es undefined, significa que el libro ya esta en la lista del usuario, !libroExistente es para ir contra 
+            // si libroExistente no es undefined, significa que el libro ya esta en la lista del usuario, !libroExistente es para contra
             if(libroExistente){
                 throw new NotFoundException('El libro ya está en la lista del usuario');
             }
@@ -98,7 +98,32 @@ export class UserService {
             return usuario
     }
     
+    // funcion para eliminar relacion de usuario y libro
+    public async eliminarLibro(usuarioId:number, libroId:number): Promise<User>{
+        // vemos si existe la relacion 
+        const user = await this.findUser(usuarioId)
 
+        // verifico que exista el libro
+        const librito = await this.libroService.findLibro(libroId)
+
+        // chequeo que el usuario tenga el libro en su lista de libros
+        const existeLibro = user.libros.find(libro => {
+            libro.id === librito.id 
+        })
+
+        // si retorna true significa que es undefines por ende no tiene el libro en su coleccion
+        if(existeLibro){
+            throw new BadRequestException('No existe este libro en la lista del usuario')
+        }
+
+        const nuevaListaLibros = user.libros.filter( libro => libro.id !== librito.id)
+        
+        user.libros = nuevaListaLibros
+
+        this.guardarUser(user)
+
+        return user
+    }
     
 
 }

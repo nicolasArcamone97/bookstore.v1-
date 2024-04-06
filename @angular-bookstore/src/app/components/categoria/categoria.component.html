@@ -1,14 +1,14 @@
-<div class="container contenedor-general">
+<!-- 
+<div class="container contenedor-general" *ngIf="categoria">
     <div class="row row-general">
         <div class="col col-titulo">
-            <p>Lista de libros</p>            
+            <p>Lista de libros de genero: {{categoria.nombre}}</p>            
         </div>
         <div class="col col-lista-libros">
             <div class="row row-lista-libros">
-                <!-- Utiliza una columna para cada libro -->
-                <div class="col-sm-12 col-md-6 col-xl-4 col-libros" *ngFor="let libro of libros">
-                   
-                    <div class="card" style="cursor: pointer"  [routerLink]="['/libro', libro.id]" >
+       
+                <div class="col-sm-12 col-md-6 col-lg-4 col-libros" *ngFor="let libro of librosCategoria">  
+                    <div class="card" style="cursor: pointer"  >
                         <img [src]="libro.portada"  class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">{{ libro.titulo }} - {{ libro.autor }}</h5>
@@ -19,6 +19,4 @@
             </div>
         </div>
     </div>
-</div>
-
-
+</div> -->

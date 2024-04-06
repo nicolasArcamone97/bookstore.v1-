@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Libro } from '../libro.interfaz';
-import { LibrosService } from '../services/libros.service';
+
+import { LibrosService } from '../../services/libros.service';
+import { Libro } from 'src/interfaces/libro.interface';
 
 @Component({
   selector: 'app-panel-administrativo',
@@ -14,6 +15,9 @@ export class PanelAdministrativoComponent implements OnInit {
 
   formularioCreacion:FormGroup
 
+  libros?: Libro[]
+
+
   libro?: Libro
 
   constructor(private form:FormBuilder, 
@@ -23,7 +27,7 @@ export class PanelAdministrativoComponent implements OnInit {
                   titulo: ['', [Validators.required]],
                   autor: ['', [Validators.required]],
                   descripcion:['', Validators.required],
-                  precio: ['', Validators.required],
+                  precio: ['', Validators.required, Validators.min(1)],
                   portada: ['', Validators.required]
                 })
               
@@ -37,6 +41,10 @@ export class PanelAdministrativoComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.listaDeLibros()
+
+
+
     // como subscribir al formulario entero
     // this.formularioCreacion.valueChanges.subscribe( valor => {
     //   this.libro = valor
@@ -90,6 +98,14 @@ export class PanelAdministrativoComponent implements OnInit {
    
   
   
+  // lista de libros 
+  listaDeLibros(){
+    return this._serviceLibros.obtenerLibros().subscribe((data: Libro[]) => {
+        this.libros = data
+    })
+  }
+
+
 
 
 

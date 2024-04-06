@@ -1,0 +1,148 @@
+*{
+    font-family: "Raleway"
+}
+
+
+.contenedor-general {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0px 5px 5px 8px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(rgba(78, 78, 78, 0.7),rgba(54, 54, 54, 0.7)), url('https://i.pinimg.com/564x/81/60/d9/8160d9a490cce2232b970144ff0ecc87.jpg');
+    align-items: center;
+}
+
+/* url('https://i.pinimg.com/564x/9f/00/53/9f0053e017e427eed4fc18d5ac2bb9b3.jpg'); */
+.row-general {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0px 1px 3px 3px rgba(0, 0, 0, 0.5);
+     background:  linear-gradient(rgba(78, 78, 78, 0.5),rgba(54, 54, 54, 0.5)),url('https://i.pinimg.com/564x/9f/00/53/9f0053e017e427eed4fc18d5ac2bb9b3.jpg');
+}
+
+
+.row-courusel {
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+
+
+.col-titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.col-titulo p {
+    font-weight: 700;
+    font-size: 30px;
+    color: #f5f4f4;
+}
+
+
+.col-lista-libros {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.row-lista-libros{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.col-libros{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+/* card de libros */
+
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2em;
+    width: 340px;
+    height: 460px;
+    border: 1px solid #ccc;
+    background-color: #e6e6e6;
+    transition: box-shadow 0.0s ease-in-out; 
+    
+}
+
+
+.card:hover {
+    transform: scale(1.01); /* Aumenta ligeramente el tamaño al pasar el mouse */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top{
+    max-width: 80%;
+    max-height: 280px;
+}
+
+
+.card-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+    max-height: 300px;    
+}
+
+
+.card-body h5{
+    font-weight: 500;
+    font-size: 1em; /* Tamaño del título */
+    max-width: 200px; /* Ancho máximo del título */
+    overflow: hidden; /* Para que el texto que sobrepase el ancho máximo se oculte */
+    white-space:inherit; /* Para que el texto no se divida en múltiples líneas */
+    text-overflow: ellipsis; /* Para que se muestre un elipsis (...) si el texto es demasiado largo */
+}
+
+.card-body  p {
+    font-size: 1em; /* Tamaño de la descripción */
+    max-width: 200px; /* Ancho máximo de la descripción */
+    max-height: 3em; /* Altura máxima de la descripción */
+    overflow: hidden; /* Para que el texto que sobrepase la altura máxima se oculte */
+    text-overflow: ellipsis; /* Para que se muestre un elipsis (...) si el texto es demasiado largo */
+    font-weight: 800;
+    background-color: rgb(59, 49, 119);
+    border-radius: 1em;
+    width: 50%;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+}
+ 
+.card-body a {
+    display: flex;
+    justify-content: end;
+    font-size: 30px;
+}
+
+.card-body .bi i{
+    color: #4b83b6;
+}
+
+.card-body .bi i:hover {
+    color: #4b83b6
+}
+
+.card-body .bi i:active {
+    color: #4b83b6;
+}

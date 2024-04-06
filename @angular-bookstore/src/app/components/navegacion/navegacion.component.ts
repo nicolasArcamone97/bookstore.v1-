@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoriaService } from '../services/categoria.service';
-import { Categoria } from '../categoria.interface';
+import { CategoriaService } from '../../services/categoria.service';
+// import { Categoria } from '../../interfaces/categoria.interface';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ export class NavegacionComponent  implements OnInit {
 
   mostrarNavegacion: boolean = true;
 
-  categorias: Categoria[] = [] 
+  // categorias: Categoria[] = [] 
 
 
   constructor( private _serviceCategoria: CategoriaService,
@@ -29,14 +29,14 @@ export class NavegacionComponent  implements OnInit {
       }
     });
 
-    this.obtenerCategorias()
+    // this.obtenerCategorias()
   }
 
-  obtenerCategorias(){
-    this.categorias = this._serviceCategoria.obtenerCategorias()
-    console.log(this.categorias)
-    return this.categorias
-  }
+  // obtenerCategorias(){
+  //   this.categorias = this._serviceCategoria.obtenerCategorias()
+  //   console.log(this.categorias)
+  //   return this.categorias
+  // }
 
 
 }
