@@ -9,7 +9,7 @@
     justify-content: center;
     flex-direction: column;
     box-shadow: 0px 5px 5px 8px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(rgba(78, 78, 78, 0.7),rgba(54, 54, 54, 0.7)), url('https://i.pinimg.com/564x/81/60/d9/8160d9a490cce2232b970144ff0ecc87.jpg');
+    background: linear-gradient(rgba(116, 115, 115, 0.7),rgba(54, 54, 54, 0.7)), url('https://i.pinimg.com/564x/81/60/d9/8160d9a490cce2232b970144ff0ecc87.jpg');
     align-items: center;
 
 
@@ -21,8 +21,8 @@
     width: 80%;
     justify-content: center;
     flex-direction: column;
-    box-shadow: 0px 1px 3px 3px rgba(0, 0, 0, 0.5);
-     background: #e8e6e5;
+    box-shadow: 0px 1px 3px 3px rgba(0, 0, 0, 0.5);                                    
+    background:#DCDDDB; 
 }
 
 
@@ -38,7 +38,7 @@
 .col-titulo p {
     font-weight: 700;
     font-size: 30px;
-    color: #14b614;
+    color: #4d5051;
 }
 
 
@@ -74,7 +74,7 @@
     margin: 2em;
     width: 340px;
     height: 460px;
-    background:#a8967b;
+    background:#928b77;
     transition: box-shadow 0.0s ease-in-out; 
     border-radius: 0;
 }
@@ -87,8 +87,9 @@
 }
 
 .card-img-top{
+    width: 230px;
     max-width: 100%;
-    max-height: 280px;
+    max-height: 260px;
     border-radius: 0;
 }
 
@@ -98,15 +99,16 @@
     justify-content: center;
     flex-direction: column;
     width: 90%;
-    max-height: 300px;    
+    max-height: 270px;    
 }
 
 /* color:#AFBD94; */
 
 .card-body h5{
-    color:#42998E;
-    font-weight: 500;
-    font-size: 1em; /* Tamaño del título */
+    font-family: "EB Garamond", serif;
+    color:#3b3837;
+    font-weight: 700;
+    font-size: 19px; /* Tamaño del título */
     max-width: 200px; /* Ancho máximo del título */
     overflow: hidden; /* Para que el texto que sobrepase el ancho máximo se oculte */
     white-space:inherit; /* Para que el texto no se divida en múltiples líneas */
@@ -114,19 +116,20 @@
 }
 
 .card-body  p {
-    font-size: 1em; /* Tamaño de la descripción */
+    font-size: 17px; /* Tamaño de la descripción */
     max-width: 200px; /* Ancho máximo de la descripción */
     max-height: 3em; /* Altura máxima de la descripción */
     overflow: hidden; /* Para que el texto que sobrepase la altura máxima se oculte */
     text-overflow: ellipsis; /* Para que se muestre un elipsis (...) si el texto es demasiado largo */
     font-weight: 800;
-    background-color: rgb(59, 49, 119);
-    border-radius: 1em;
+    /* background-color: #9fb0ac; */
+    border-radius: 0;
     width: 50%;
     justify-content: center;
     text-align: center;
-    color:#C1FEF6;
+    color:#131618;
     margin-top: 10px;
+    font-family: "EB Garamond", serif;
 }
  
 .card-body a {
@@ -136,14 +139,15 @@
 }
 
 
-.card-body .bi{
-    color: #4b83b6;
+.card-body .bi {
+    color: #1e2226;
+    border: 10px
 }
 
-.card-body .bi i:hover {
-    color: #4b83b6
+.card-body .bi:hover{
+    color: #9fb0ac
 }
 
-.card-body .bi i:active {
+.card-body .bi:active {
     color: #4b83b6;
 }
