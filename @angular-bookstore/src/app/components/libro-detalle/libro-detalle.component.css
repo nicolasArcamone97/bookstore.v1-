@@ -64,7 +64,9 @@
     margin: 1em;
 }
 
-
+.table th, td {
+    background-color: rgb(235, 212, 182);
+}
 
 
 .col-compra{
@@ -116,5 +118,8 @@
 }
 
 .col-compra-botones .btn {
+    background-color: #241e16;
+    border-radius: 0;
+    border: #241e16;
     margin: 0px 0px 20px 0px;
 }

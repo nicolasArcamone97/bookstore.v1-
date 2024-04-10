@@ -1,30 +1,24 @@
-*{
-    font-family: "Raleway"
-}
-
 
 .contenedor-general {
     display: flex;
-    width: 100%;
     justify-content: center;
     flex-direction: column;
     box-shadow: 0px 5px 5px 8px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(rgba(116, 115, 115, 0.7),rgba(54, 54, 54, 0.7)), url('https://i.pinimg.com/564x/81/60/d9/8160d9a490cce2232b970144ff0ecc87.jpg');
+    background: linear-gradient(rgba(116, 115, 115, 0.7),rgba(54, 54, 54, 0.7)), url('https://i.pinimg.com/564x/9f/00/53/9f0053e017e427eed4fc18d5ac2bb9b3.jpg');
     align-items: center;
-
-
 }
+
 
 
 .row-general {
     display: flex;
-    width: 80%;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
+    width: 90%;
     box-shadow: 0px 1px 3px 3px rgba(0, 0, 0, 0.5);                                    
     background:#DCDDDB; 
 }
-
 
 
 .col-titulo {
@@ -35,6 +29,7 @@
     width: 100%;
 }
 
+
 .col-titulo p {
     font-weight: 700;
     font-size: 30px;
@@ -43,100 +38,120 @@
 
 
 .col-lista-libros {
+
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 
 
-.row-lista-libros{
+.row-lista-libros {
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
 
-.col-libros{
+
+
+
+
+.col-libros {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* margin: 2em; */
 }
 
-
-
-
-/* card de libros */
 
 
 .card {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 2em;
-    width: 340px;
-    height: 460px;
-    background:#928b77;
-    transition: box-shadow 0.0s ease-in-out; 
+    flex-direction: row;
+    /* background:#a19d92; */
+    background-color: rgb(211, 153, 153);
     border-radius: 0;
+    margin: 1em;
+    transition: box-shadow 0.0s ease-in-out; 
 }
 
-/*  */
-
 .card:hover {
-    transform: scale(1.01); /* Aumenta ligeramente el tamaño al pasar el mouse */
+    transform: scale(1.01);                               
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-.card-img-top{
-    width: 230px;
-    max-width: 100%;
+
+
+.card-img-top {
+    width: 80%;
+    max-width: 180px;
     max-height: 260px;
     border-radius: 0;
 }
 
-
 .card-body {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    width: 90%;
-    max-height: 270px;    
+    max-height: 260px;
+    max-width: 260px;
+    padding: 10px;
 }
 
-/* color:#AFBD94; */
 
-.card-body h5{
+.card-body .card-title {
+    display: flex;
+    justify-content: center;
     font-family: "EB Garamond", serif;
     color:#3b3837;
-    font-weight: 700;
-    font-size: 19px; /* Tamaño del título */
-    max-width: 200px; /* Ancho máximo del título */
-    overflow: hidden; /* Para que el texto que sobrepase el ancho máximo se oculte */
-    white-space:inherit; /* Para que el texto no se divida en múltiples líneas */
+    font-weight: 800;
+    font-size: 15px; /* Tamaño del título */
+    white-space:inherit;/* Para que el texto no se divida en múltiples líneas */ 
     text-overflow: ellipsis; /* Para que se muestre un elipsis (...) si el texto es demasiado largo */
+    overflow:visible;
 }
 
-.card-body  p {
-    font-size: 17px; /* Tamaño de la descripción */
-    max-width: 200px; /* Ancho máximo de la descripción */
-    max-height: 3em; /* Altura máxima de la descripción */
-    overflow: hidden; /* Para que el texto que sobrepase la altura máxima se oculte */
-    text-overflow: ellipsis; /* Para que se muestre un elipsis (...) si el texto es demasiado largo */
-    font-weight: 800;
-    /* background-color: #9fb0ac; */
-    border-radius: 0;
-    width: 50%;
-    justify-content: center;
-    text-align: center;
-    color:#131618;
-    margin-top: 10px;
-    font-family: "EB Garamond", serif;
+
+
+
+
+
+
+.card-body .card-text {
+     font-size: 13px; /* Tamaño de la descripción */
+     max-width: 300px; /* Ancho máximo de la descripción */
+     height: 200px;
+     max-height: 200px; /* Altura máxima de la descripción */
+     overflow: hidden; /* Para que el texto que sobrepase la altura máxima se oculte  */
+     text-overflow: ellipsis; /* Para que se muestre un elipsis (...) si el texto es demasiado largo */
+     font-weight: 400;  
+     border-radius: 0; 
+     justify-content: center;
+     color:#131618; 
+    
 }
- 
+
+.card-precio {
+    display: flex;
+    font-family: "EB Garamond", serif;
+    font-weight: 800;
+    color: #131618;
+    padding-top: 10px ;
+}
+
+
+
+
+
 .card-body a {
     display: flex;
     justify-content: end;
     font-size: 30px;
-}
+    position: relative;
+    bottom: 0; /* Lo coloca en la parte inferior del contenedor */
+} 
 
 
 .card-body .bi {
@@ -145,9 +160,11 @@
 }
 
 .card-body .bi:hover{
-    color: #9fb0ac
+    color: #df655c
 }
 
 .card-body .bi:active {
     color: #4b83b6;
-}
+} 
+
+
