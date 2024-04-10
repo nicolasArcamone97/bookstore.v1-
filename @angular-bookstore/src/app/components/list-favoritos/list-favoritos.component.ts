@@ -30,13 +30,13 @@ export class ListFavoritosComponent implements OnInit{
      })
   }
 
-  // obtener los libros del usuario acitvo
+  //alamcenar los libros del usuario acitvo
   librosDeUsuario() {
     this.libros = this.usuarioActivo?.libros
     return this.libros
   }
 
-
+  //eliminar un libro de la lista de libros del usuario activo
   eliminarDeListaFavoritos(usuarioId:number, libroId:number){
     this.usuarioService.eliminarLibro(usuarioId,libroId).subscribe( () => {
         this.obtenerUsuario(usuarioId)
