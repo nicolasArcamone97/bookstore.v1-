@@ -9,24 +9,21 @@ import { AuthModule } from './auth/auth.module';
 import { CarroModule } from './carro/carro.module';
 import { dbConfig } from './db.config';
 import { LibroModule } from './libro/libro.module';
+import { CategoriaModule } from './categoria/categoria.module';
 
 
 dotenv.config()
 
-
-
-
-
 @Module({
-  
   imports: [
     TypeOrmModule.forRoot(dbConfig),
     UserModule,
     CarroModule,
     AuthModule,
-    LibroModule
+    LibroModule,
+    CategoriaModule
   ],
-  controllers: [],
+  controllers:[],
   providers: [],
 })
 export class AppModule {}
