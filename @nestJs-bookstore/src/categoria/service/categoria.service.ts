@@ -16,7 +16,7 @@ export class CategoriaService {
     // obtener todas las categorias
     public async findCategorias(): Promise<Categoria[]> {
         return await this.categoriaRepositoty.find({
-            relations: ['categorias']
+            relations: ['libros']
         })
     }
 
@@ -24,7 +24,7 @@ export class CategoriaService {
         // obtengo la categoria con el id 
         const categoria:Categoria = await this.categoriaRepositoty.findOne({ 
             where: {id:id}, 
-            relations: ['categorias']})
+            relations: ['libros']})
 
         // '!categoria = si es null o undefined da true, si tiene un elemento osea no es null da false
         if(!categoria){
@@ -41,12 +41,12 @@ export class CategoriaService {
         const categoria: Categoria = await this.categoriaRepositoty.findOneBy({nombre: categori.nombre})
 
         // si la categoria es diferente que null es porque ya existe una 
-        if(categoria !== null){
+        if(categoria){
             throw new BadRequestException('Ya existe una categoria')
         }
 
         // guardamos la instancia creada 
-        const newCategoria = this.categoriaRepositoty.create(categoria)
+        const newCategoria = this.categoriaRepositoty.create(categori)
 
         // guardamos en la db
         this.guardarCategoria(newCategoria)
@@ -64,13 +64,13 @@ export class CategoriaService {
         const librito: Libro = await this.libroService.findLibro(idLibro)
 
         // verifico que el libro no exista en la lista de libros de la categoria
-        const existeLibro = categoria.libros.find( libro => libro.id == librito.id)
+        const existeLibro = categoria.libros.find( libro => libro.id === librito.id)
 
-        if(existeLibro !== null){
+        if(existeLibro !== undefined){
             throw new BadRequestException('El libro ya existe en la categoria')
         }
 
-        categoria.libros.push(existeLibro)
+        categoria.libros.push(librito)
 
         this.guardarCategoria(categoria)
     }
