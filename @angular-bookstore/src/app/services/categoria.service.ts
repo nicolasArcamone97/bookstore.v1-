@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Categoria } from 'src/interfaces/categoria.interface';
 
 
 
@@ -9,30 +12,21 @@ import { Injectable } from '@angular/core';
 
 export class CategoriaService {
 
-  // listCategorias: Categoria[] = [
-    
-      
-  // ]
+  private baseUrl = 'http://localhost:3001/api/categorias'
 
-  // constructor() { 
-  //   this.obtenerCategorias()
-  // }
+  constructor(private httpCliente: HttpClient){}
 
 
-  // obtenerCategorias(): Categoria[]{
-  //   console.log(this.listCategorias)
-  //   return this.listCategorias
-  // }
+  obtenerCategorias():Observable<Categoria[]>{
+    return this.httpCliente.get<Categoria[]>(this.baseUrl)
+  }
 
-  // obtenerCategoria(idCategoria:number){
-  //   const categoria = this.listCategorias.find(categoria => categoria.id == idCategoria )
-  //   return categoria
-  // }
 
-  // obtenerLibrosCategoria(idCategoria:number){
-  //   const librosCategoria = this.obtenerCategoria(idCategoria)?.libros
-  //   return librosCategoria
-  // }
+  obtenerCategoria(id:number): Observable<Categoria> {
+    return this.httpCliente.get<Categoria>(`${this.baseUrl}/${id}`)
+  }
+  
+
 
 
 }

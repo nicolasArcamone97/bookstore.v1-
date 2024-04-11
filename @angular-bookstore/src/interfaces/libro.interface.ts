@@ -1,3 +1,4 @@
+import { Categoria } from "./categoria.interface"
 
 export interface Libro {
     id: number,
@@ -6,4 +7,5 @@ export interface Libro {
     descripcion: string,
     precio: number,
     portada: string
+    categorias: Categoria[]
 }

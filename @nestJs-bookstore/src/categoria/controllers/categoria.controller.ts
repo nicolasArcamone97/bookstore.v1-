@@ -12,7 +12,7 @@ export class CategoriaController {
         return await this.categoriaService.findCategorias()
     }
 
-    @Get(':ïd')
+    @Get(':id')
     async findCategoria(@Param('id') id:number):Promise<Categoria> {
         return await this.categoriaService.findCategoria(id)
     }

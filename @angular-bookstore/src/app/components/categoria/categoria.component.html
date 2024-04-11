@@ -1,22 +1,27 @@
-<!-- 
-<div class="container contenedor-general" *ngIf="categoria">
+<div class="container-fluid contenedor-general" *ngIf="usuarioActivo">
     <div class="row row-general">
-        <div class="col col-titulo">
-            <p>Lista de libros de genero: {{categoria.nombre}}</p>            
-        </div>
         <div class="col col-lista-libros">
-            <div class="row row-lista-libros">
-       
-                <div class="col-sm-12 col-md-6 col-lg-4 col-libros" *ngFor="let libro of librosCategoria">  
-                    <div class="card" style="cursor: pointer"  >
-                        <img [src]="libro.portada"  class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ libro.titulo }} - {{ libro.autor }}</h5>
-                            <p class="card-text">${{ libro.precio | number: '1.3'}}</p>
-                        </div>
-                    </div>
-                </div>
+           <div class="row row-lista-libros" *ngIf="categoria">
+            <div class="titulo">
+                <h1>{{categoria.nombre}}</h1>
             </div>
-        </div>
-    </div>
-</div> -->
+
+
+               <!-- Utiliza una columna para cada libro -->
+               <div class="col-sm-12 col-md-6 col-xl-4 col-libros" *ngFor="let libro of categoria?.libros" >
+                   <div class="card"  >
+                       <img [src]="libro.portada"  class="card-img-top" style="cursor: pointer"  [routerLink]="['/libro', libro.id]">
+                       <div class="card-body">
+                           <h5 class="card-title">{{ libro.titulo }} - {{ libro.autor }}</h5>
+                           <p class="card-precio">${{ libro.precio | number: '1.3'}}</p>
+                           <a class="nav-link" style="cursor: pointer;" (click)="agregarFavoritos(usuarioActivo.id,libro.id)">
+                               <span><i class="bi bi-star"></i></span>
+                           </a>
+                           <button class="btn btn-secondary my-2 my-sm-0" type="submit">Comprar</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
