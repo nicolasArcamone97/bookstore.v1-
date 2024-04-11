@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UsuarioService } from './services/usuario.service';
+import { Usuario } from 'src/interfaces/usuari.interface';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  nombre: string = 'Nicolás'
-  titulo = 'practica-angular';
+  
+
+  constructor(private userService: UsuarioService){
+   
+  }
+
+
 }

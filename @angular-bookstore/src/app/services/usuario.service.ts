@@ -10,8 +10,16 @@ export class UsuarioService {
 
   private baseUrl = 'http://localhost:3001/api/user'
 
+  usuario?: Usuario
+
   constructor(private httpClient: HttpClient) { }
 
+
+  //funcion para implementar en todos los componentes el mismo usuario de forma estatica hasta seguir avanzando 
+  // en vez de que todas tengan que usar obtenerUsuario(id), recibiran ya el usuario con el id definido
+  getUser(){
+    return this.obtenerUsuario(1)
+  }
 
   obtenerUsuarios(): Observable<Usuario[]> {
     return this.httpClient.get<Usuario[]>(`${this.baseUrl}`)

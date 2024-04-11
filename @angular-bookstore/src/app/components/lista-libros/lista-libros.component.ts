@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { LibrosService } from '../../services/libros.service';
 import { Router } from '@angular/router';
 import { Libro } from 'src/interfaces/libro.interface';
 import { UsuarioService } from '../../services/usuario.service';
+import { Usuario } from 'src/interfaces/usuari.interface';
 
 
 
@@ -16,7 +17,7 @@ export class ListaLibrosComponent {
   // lista vacia de libros, deberia tener asignado el tipo Libro pero no esta desarrollado
   libros: Libro[] = []
 
- 
+  usuarioActivo?: Usuario
 
   constructor( private _serviceLibros : LibrosService,
               private usuarioService: UsuarioService,
@@ -29,6 +30,7 @@ export class ListaLibrosComponent {
   // deberiamos usar ngOnInit()
   ngOnInit(): void {
     this.obtenerLibros()
+    this.obtenerUsuario()
   }
 
   
@@ -40,17 +42,20 @@ export class ListaLibrosComponent {
   }
 
 
-  navegarLibro(libroId: number){
-    this.router.navigate(['/libro', libroId])
-  }
-
-
-  agregarFavoritos(idLibro:number){
-    this.usuarioService.asignarLibro(1, idLibro).subscribe(() => {
-      console.log(1, idLibro)
-      console.log('Libro agregado a favoritos')
+  agregarFavoritos(idUsuario:number,idLibro:number){
+    this.usuarioService.asignarLibro(idUsuario , idLibro).subscribe(() => {
     })
   }
+
+
+
+  // obtener usuario por id 
+  obtenerUsuario(){
+    this.usuarioService.getUser().subscribe((data: Usuario) => {
+      this.usuarioActivo = data
+    })
+  }
+
 
 
 }

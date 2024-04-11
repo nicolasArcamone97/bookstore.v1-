@@ -19,13 +19,13 @@ export class ListFavoritosComponent implements OnInit{
   constructor(private usuarioService: UsuarioService){}
 
   ngOnInit(): void {
-    this.obtenerUsuario(1)
+    this.obtenerUsuario()
    
   }
 
   // obtener un user id desde el back
-  obtenerUsuario(id:number){
-     this.usuarioService.obtenerUsuario(id).subscribe( (data: Usuario) => {
+  obtenerUsuario(){
+     this.usuarioService.getUser().subscribe( (data: Usuario) => {
         this.usuarioActivo = data
      })
   }
@@ -36,10 +36,10 @@ export class ListFavoritosComponent implements OnInit{
     return this.libros
   }
 
-  //eliminar un libro de la lista de libros del usuario activo
+  //eliminar un libro de la lista de libros del usuario
   eliminarDeListaFavoritos(usuarioId:number, libroId:number){
     this.usuarioService.eliminarLibro(usuarioId,libroId).subscribe( () => {
-        this.obtenerUsuario(usuarioId)
+        this.obtenerUsuario()
     })
   }
 }

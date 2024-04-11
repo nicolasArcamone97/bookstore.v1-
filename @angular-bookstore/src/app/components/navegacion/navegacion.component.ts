@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CategoriaService } from '../../services/categoria.service';
 // import { Categoria } from '../../interfaces/categoria.interface';
 import { Router } from '@angular/router';
+import { Usuario } from 'src/interfaces/usuari.interface';
 
 @Component({
   selector: 'app-navegacion',
@@ -11,8 +12,6 @@ import { Router } from '@angular/router';
 export class NavegacionComponent  implements OnInit {
 
   mostrarNavegacion: boolean = true;
-
-  // categorias: Categoria[] = [] 
 
 
   constructor( private _serviceCategoria: CategoriaService,
@@ -28,15 +27,7 @@ export class NavegacionComponent  implements OnInit {
         this.mostrarNavegacion = true;
       }
     });
-
-    // this.obtenerCategorias()
   }
-
-  // obtenerCategorias(){
-  //   this.categorias = this._serviceCategoria.obtenerCategorias()
-  //   console.log(this.categorias)
-  //   return this.categorias
-  // }
 
 
 }
