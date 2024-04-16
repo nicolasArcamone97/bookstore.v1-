@@ -72,7 +72,7 @@
     justify-content: center;
     flex-direction: row;
     /* background:#a19d92; */
-    background-color: rgb(211, 153, 153);
+    background-color:  #37797C;
     border-radius: 0;
     margin: 1em;
     transition: box-shadow 0.0s ease-in-out; 
@@ -105,7 +105,7 @@
     display: flex;
     justify-content: center;
     font-family: "EB Garamond", serif;
-    color:#3b3837;
+    color:#cfcccb;
     font-weight: 800;
     font-size: 15px; /* Tamaño del título */
     white-space:inherit;/* Para que el texto no se divida en múltiples líneas */ 
@@ -129,7 +129,7 @@
      font-weight: 400;  
      border-radius: 0; 
      justify-content: center;
-     color:#131618; 
+     color:#cfcfcf; 
     
 }
 

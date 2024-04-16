@@ -5,6 +5,7 @@ import { LibroDetalleComponent } from './components/libro-detalle/libro-detalle.
 import { CategoriaComponent } from './components/categoria/categoria.component';
 import { PanelAdministrativoComponent } from './components/panel-administrativo/panel-administrativo.component';
 import { ListFavoritosComponent } from './components/list-favoritos/list-favoritos.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
 
 const routes: Routes = [
   { path:'inicio', component: ListaLibrosComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'categoria/:id', component: CategoriaComponent},
   { path: 'panel-admin', component: PanelAdministrativoComponent},
   { path: 'favoritos', component: ListFavoritosComponent},
+  { path: 'carro', component: CarritoComponent},
   {path: '**', redirectTo: 'inicio'}
 ];
 

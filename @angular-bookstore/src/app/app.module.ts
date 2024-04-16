@@ -12,7 +12,8 @@ import { ListaLibrosComponent } from './components/lista-libros/lista-libros.com
 import { CategoriaComponent } from './components/categoria/categoria.component';
 import { PanelAdministrativoComponent } from './components/panel-administrativo/panel-administrativo.component';
 import {HttpClientModule} from '@angular/common/http';
-import { ListFavoritosComponent } from './components/list-favoritos/list-favoritos.component'
+import { ListFavoritosComponent } from './components/list-favoritos/list-favoritos.component';
+import { CarritoComponent } from './components/carrito/carrito.component'
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ListFavoritosComponent } from './components/list-favoritos/list-favorit
     CategoriaComponent,
     PanelAdministrativoComponent,
     ListFavoritosComponent,
+    CarritoComponent,
   ],
   imports: [
     HttpClientModule,

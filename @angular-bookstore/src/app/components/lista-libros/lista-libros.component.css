@@ -109,7 +109,7 @@
     left: 0;
     bottom: -100%; /* Inicialmente, oculta el cuerpo de la tarjeta fuera de la pantalla */
     width: 100%; /* Ancho del cuerpo de la tarjeta */
-    background-color: rgb(211, 153, 153);
+    background-color: #37797C;
     transition: bottom 0.7s ease; /* Agrega una transición suave al mostrar/ocultar el cuerpo */
     display: flex;
     flex-direction: column;
@@ -129,6 +129,7 @@
     white-space: inherit; /* Para que el texto no se divida en múltiples líneas */ 
     text-overflow: ellipsis; /* Para que se muestre un elipsis (...) si el texto es demasiado largo */
     overflow: visible;
+    color: rgb(240, 235, 235) ;
 }
 
 .card-body p {
@@ -136,7 +137,7 @@
     max-width: 200px; /* Ancho máximo de la descripción */
     font-weight: 800;
     font-family: "EB Garamond", serif;
-    color: black;
+    color: rgb(231, 229, 229);
     margin-bottom: 10px; /* Agregar margen inferior para separar del botón */
 }
 
