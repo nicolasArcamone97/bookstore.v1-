@@ -8,6 +8,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 360px;
+
 }
 
 .row-general {
@@ -169,7 +171,96 @@
 
 
 
+/* arranca columna resumen */
+
 .col-resumen {
-    height: 300px;
-    background-color: red;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+}
+
+.row-resumen {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.col-title {
+    display: flex;
+    font-size: 20px;
+    font-weight: 500;
+    justify-content: center;
+    margin-top: 10px;
+    font-family: "EB Garamond", serif;
+}
+
+.col-montos {
+    display: flex;
+    font-size: 15px;
+    font-weight: 500;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;;
+  
+}
+
+
+
+.subtotal {
+    font-size: 15px;
+    display: flex;
+    justify-content: start;
+    font-family: "EB Garamond", serif;
+}
+
+ .monto {
+    display: flex;
+    justify-content: end;
+    font-size: 15px;
+}
+
+
+
+.col-calcular {
+    display: flex;
+    font-size: 13px;
+    font-weight: 500;
+    justify-content: start;
+    flex-direction: row;
+    margin-top: 1em;
+    font-family: "EB Garamond", serif;
+}
+
+
+
+.col-total {
+    display: flex;
+    font-size: 15px;
+    font-weight: 500;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;;
+    border-bottom: 1px solid;
+}
+
+
+
+
+
+
+
+.col-btn {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.col-btn .btn {
+    font-family: "EB Garamond", serif;
+    border-radius: 0;
+    width: 50%;
+    background-color: #37797C;
 }
