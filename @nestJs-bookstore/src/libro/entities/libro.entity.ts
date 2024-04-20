@@ -1,6 +1,7 @@
 import { Column, CreateDateColumn, Entity, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm"
 import { User } from "src/user/entities/user.entity"
 import { Categoria } from "src/categoria/entities/categoria.entity"
+import { Carro } from "src/carro/entities/carro.entity"
 
 @Entity()
 export class Libro {
@@ -35,5 +36,6 @@ export class Libro {
     @ManyToMany(() => Categoria, categoria => categoria.libros, {cascade:true})
     categorias: Categoria[]
 
-
+    @ManyToMany(() => Carro, carro => carro.libros, {cascade:true})
+    carros: Carro[]
 }

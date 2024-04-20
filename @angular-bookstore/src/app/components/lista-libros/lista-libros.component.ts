@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { Libro } from 'src/interfaces/libro.interface';
 import { UsuarioService } from '../../services/usuario.service';
 import { Usuario } from 'src/interfaces/usuari.interface';
+import { CarritoService } from 'src/app/services/carrito.service';
+import { Carro } from 'src/interfaces/carro.interface';
 
 
 
@@ -19,8 +21,11 @@ export class ListaLibrosComponent {
 
   usuarioActivo?: Usuario
 
+  carroActivo?: Carro
+
   constructor( private _serviceLibros : LibrosService,
               private usuarioService: UsuarioService,
+              private carroService: CarritoService,
                 private router: Router){
     // this.obtenerLibros()      //llama el metodo para obtener los libros cuando se inicia, de esta forma no uso el OnInit
   }
@@ -47,15 +52,17 @@ export class ListaLibrosComponent {
     })
   }
 
-
+ 
 
   // obtener usuario por id 
   obtenerUsuario(){
     this.usuarioService.getUser().subscribe((data: Usuario) => {
       this.usuarioActivo = data
+      this.carroActivo = data.carro
+      console.log(data.carro)
     })
   }
 
-
+ 
 
 }

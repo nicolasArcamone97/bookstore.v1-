@@ -13,9 +13,7 @@ export class LibroService {
     // obtener libros de la base de datos 
     public async findLibros(): Promise<Libro[]>{
         const libros = await this.libroRepository.find({
-          relations: {
-            usuarios: true
-          }
+          relations: ['usuarios']
         })
         
         if(!libros || libros.length == 0){
@@ -28,8 +26,7 @@ export class LibroService {
     
     // funcion para obtener un libro 
     public async findLibro(id:number): Promise<Libro>{
-        return await this.libroRepository.findOne({where: {id:id}, relations: ['usuarios']
-        })
+        return await this.libroRepository.findOne({where: {id:id}, relations: ['usuarios', 'carros']})
     }
 
 
