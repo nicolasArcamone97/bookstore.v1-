@@ -40,7 +40,7 @@
                             <a class="nav-link" style="cursor: pointer;" (click)="agregarFavoritos( usuarioActivo.id , libro.id)">
                                 <span><i class="bi bi-star"></i></span>
                             </a>
-                            <button    class="btn btn-secondary my-2 my-sm-0" type="submit" >Comprar</button>
+                            <button    class="btn btn-secondary my-2 my-sm-0" type="submit" (click)="agregarAlCarro(usuarioActivo.carro.id, libro.id)" >Comprar</button>
                         </div>
                     </div>
                 </div>

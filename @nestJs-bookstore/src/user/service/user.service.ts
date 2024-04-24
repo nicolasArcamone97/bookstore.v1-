@@ -16,12 +16,7 @@ export class UserService {
     // obtener todos los usuarios de la db, (rol admin)
     public async findUsers(): Promise<User[]> {
         // si no hay usuarios retorna una lista vacioa
-        const users = await this.userRepository.find({
-            relations: {
-                libros: true
-            },
-            select: ['id','nombre','email']
-        }, )
+        const users = await this.userRepository.find({relations: ['carro','libros']})
         
         // si la lista es === 0, no hay usuarios
         if(users.length === 0){
@@ -37,7 +32,7 @@ export class UserService {
     public async findUser(id:number): Promise<User>{
         // buscamos el usuario, si no hay un usuario con ese id devuelve un null
         const user = await this.userRepository.findOne({where: {id:id},
-            relations: ['libros']
+            relations: ['libros','carro']
         })
 
         

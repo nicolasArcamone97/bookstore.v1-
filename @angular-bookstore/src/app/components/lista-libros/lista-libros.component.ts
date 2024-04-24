@@ -63,6 +63,11 @@ export class ListaLibrosComponent {
     })
   }
 
- 
+  agregarAlCarro(carroId:number,libroId:number){
+    this.carroService.asignarLibro(carroId,libroId).subscribe(() => {
+      
+    })
+  }
+
 
 }

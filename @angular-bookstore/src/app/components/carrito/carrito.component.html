@@ -17,8 +17,13 @@
                   </div>
                   <!-- termian col head -->
 
+                  <div class="notLibro" *ngIf="carroActivo.libros.length === 0">
+                    <p>Aún no tienes libros en tu carrito...</p>
+                  </div>
+
                   <!-- arranca col body -->
                   <div class="col col-body" *ngFor="let libro of libros">
+                    
                     <ul>
                       <li class="li-img">
                         <img [src]="libro.portada" alt="">

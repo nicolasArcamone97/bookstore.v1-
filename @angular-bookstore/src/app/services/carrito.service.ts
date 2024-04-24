@@ -32,6 +32,4 @@ export class CarritoService {
     return this.http.delete(`${this.baseUrl}/${carrId}/deleteLibro/${libroId}`)
   }
 
-
-
 }
