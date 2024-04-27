@@ -6,6 +6,7 @@ import { UsuarioService } from '../../services/usuario.service';
 import { Usuario } from 'src/interfaces/usuari.interface';
 import { CarritoService } from 'src/app/services/carrito.service';
 import { Carro } from 'src/interfaces/carro.interface';
+import Swal from 'sweetalert2';
 
 
 
@@ -27,7 +28,7 @@ export class ListaLibrosComponent {
               private usuarioService: UsuarioService,
               private carroService: CarritoService,
                 private router: Router){
-    // this.obtenerLibros()      //llama el metodo para obtener los libros cuando se inicia, de esta forma no uso el OnInit
+     this.obtenerLibros()      //llama el metodo para obtener los libros cuando se inicia, de esta forma no uso el OnInit
   }
 
 
@@ -36,12 +37,13 @@ export class ListaLibrosComponent {
   ngOnInit(): void {
     this.obtenerLibros()
     this.obtenerUsuario()
+    this.obtenerCarro(1)
   }
 
   
   // opbtengo los libros de un servicio 
-  obtenerLibros(){
-    this._serviceLibros.obtenerLibros().subscribe(data => {
+  obtenerLibros(): void{
+    this._serviceLibros.obtenerLibros().subscribe((data:Libro[])=> {
       this.libros = data
     })
   }
@@ -50,6 +52,13 @@ export class ListaLibrosComponent {
   agregarFavoritos(idUsuario:number,idLibro:number){
     this.usuarioService.asignarLibro(idUsuario , idLibro).subscribe(() => {
     })
+
+    Swal.fire({
+      text: 'Tu libro fue agregado a favoritos',
+      icon: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+
   }
 
  
@@ -59,15 +68,32 @@ export class ListaLibrosComponent {
     this.usuarioService.getUser().subscribe((data: Usuario) => {
       this.usuarioActivo = data
       this.carroActivo = data.carro
-      console.log(data.carro)
     })
   }
 
   agregarAlCarro(carroId:number,libroId:number){
     this.carroService.asignarLibro(carroId,libroId).subscribe(() => {
-      
+      this.obtenerCarro(carroId)
     })
   }
+
+
+
+  obtenerCarro(carroId:number) {
+    this.carroService.obtenerCarro(carroId).subscribe((data:Carro) => {
+      this.carroActivo = data
+      this.carroActivo.total = this.carroActivo.libros.reduce((acumulator,elemento) => {
+        return acumulator + elemento.precio
+      }, 0)
+    })
+  }
+
+  eliminarLibro(carroId:number,libroId:number){
+    this.carroService.eliminarLibro(carroId,libroId).subscribe(data => {
+      this.obtenerCarro(carroId)
+    })
+  }
+
 
 
 }

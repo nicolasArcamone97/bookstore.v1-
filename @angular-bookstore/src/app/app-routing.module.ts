@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'categoria/:id', component: CategoriaComponent},
   { path: 'panel-admin', component: PanelAdministrativoComponent},
   { path: 'favoritos', component: ListFavoritosComponent},
-  { path: 'carro', component: CarritoComponent},
+  { path: 'carro/:id', component: CarritoComponent},
   {path: '**', redirectTo: 'inicio'}
 ];
 
