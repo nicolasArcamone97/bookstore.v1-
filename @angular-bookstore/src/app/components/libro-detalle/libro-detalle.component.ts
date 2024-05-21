@@ -7,6 +7,7 @@ import { Usuario } from 'src/interfaces/usuari.interface';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { Carro } from 'src/interfaces/carro.interface';
 import { CarritoService } from 'src/app/services/carrito.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-libro-detalle',
@@ -47,6 +48,12 @@ export class LibroDetalleComponent implements OnInit {
 
   agregarAlCarro(carroId:number, libroId:number){
     this.serviceCarrito.asignarLibro(carroId, libroId).subscribe(  () => {})
+    Swal.fire({
+      text: 'Tu libro fue agregado al carrito',
+      icon: 'success',
+      confirmButtonText: 'Aceptar'
+    });
+
   }
 
 

@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
 import { LibroService } from '../service/libro.service';
 import { Libro } from '../entities/libro.entity';
 
@@ -24,7 +24,11 @@ export class LibroController {
     }
 
 
-
+    @Get('buscar')
+    async buscarLibroPorTitulo(@Query('titulo') titulo: string){
+        const libros = await this.libroService.buscarLibro(titulo);
+        return libros;
+    }
 
 
 }

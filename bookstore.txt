@@ -1,0 +1,30 @@
+
+Para tu proyecto de una librería (bookstore), podrías considerar las siguientes entidades:
+
+Libro (Book): Con atributos como título, autor, género, descripción, precio y stock.
+
+Usuario (User): Con atributos como nombre, correo electrónico, contraseña (asegúrate de almacenar las contraseñas de forma segura, por ejemplo, mediante hash), dirección, y carrito de compras.
+
+Carrito de Compras (Shopping Cart): Para almacenar los libros que un usuario ha agregado para comprar.
+
+Orden (Order): Para representar una transacción de compra, con detalles como los libros comprados, fecha, estado del pedido, etc.
+
+Reseña (Review): Si deseas permitir que los usuarios dejen reseñas y calificaciones para los libros.
+
+Categoría (Category): Para clasificar los libros en géneros o categorías específicas.
+
+Administrador (Admin): Si decides implementar un panel de administrador, puedes tener una entidad para gestionar las funciones administrativas.
+
+Autor (Author): Si deseas incluir información adicional sobre los autores de los libros.
+
+Asegúrate de establecer relaciones adecuadas entre estas entidades. Por ejemplo, una orden puede tener múltiples libros, un libro puede tener múltiples reseñas, etc. Esto te ayudará a diseñar una base de datos eficiente para tu aplicación.
+
+
+"id": 6,
+    "titulo": "Encuntros (El lado B del amor)",
+    "autor": "Gabriel Rolon",
+    "genero": "drama",
+    "descripcion": "es sobre algo del amor",
+    "portada": "download.jpg",
+    "precio": 5000
+

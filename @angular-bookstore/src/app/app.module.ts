@@ -14,7 +14,8 @@ import { PanelAdministrativoComponent } from './components/panel-administrativo/
 import {HttpClientModule} from '@angular/common/http';
 import { ListFavoritosComponent } from './components/list-favoritos/list-favoritos.component';
 import { CarritoComponent } from './components/carrito/carrito.component'
-import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2'
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { AuhtComponent } from './components/auht/auht.component'
 
 
 
@@ -29,6 +30,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2'
     PanelAdministrativoComponent,
     ListFavoritosComponent,
     CarritoComponent,
+    AuhtComponent,
   ],
   imports: [
     HttpClientModule,

@@ -6,6 +6,7 @@ import { CategoriaComponent } from './components/categoria/categoria.component';
 import { PanelAdministrativoComponent } from './components/panel-administrativo/panel-administrativo.component';
 import { ListFavoritosComponent } from './components/list-favoritos/list-favoritos.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
+import { AuhtComponent } from './components/auht/auht.component';
 
 const routes: Routes = [
   { path:'inicio', component: ListaLibrosComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'panel-admin', component: PanelAdministrativoComponent},
   { path: 'favoritos', component: ListFavoritosComponent},
   { path: 'carro/:id', component: CarritoComponent},
+  { path: 'inicio-sesion', component: AuhtComponent},
   {path: '**', redirectTo: 'inicio'}
 ];
 

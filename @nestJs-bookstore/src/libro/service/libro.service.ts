@@ -2,6 +2,7 @@ import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Libro } from '../entities/libro.entity';
 import { Repository } from 'typeorm';
+import { throwError } from 'rxjs';
 
 @Injectable()
 export class LibroService {
@@ -53,6 +54,15 @@ export class LibroService {
     public async guardarLibro(libro:Libro){
         return await this.libroRepository.save(libro)
     }
+    
 
+
+
+    // search libro
+    public async buscarLibro(titulo: string): Promise<Libro[]> {
+        const librosExistente = await this.libroRepository.find({where: {titulo:titulo}});
+        console.log(librosExistente)
+        return librosExistente;
+    }
 
 }
