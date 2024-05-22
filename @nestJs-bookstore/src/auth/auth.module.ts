@@ -8,7 +8,7 @@ import { JwtModule } from '@nestjs/jwt';
 @Module({
   imports: [UserModule, CarroModule, JwtModule.register({
     global:true,
-    secret: process.env.JWT_SECRET,
+    secret: 'P4L48R4$3CR3T4',
     signOptions: {expiresIn: '30s'}
   })],
   controllers: [AuthController],

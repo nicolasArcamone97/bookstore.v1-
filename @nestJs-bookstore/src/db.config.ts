@@ -7,11 +7,11 @@ dotenv.config()
 
 export const dbConfig = {
     type:'mysql' as any,
-      host:process.env.DB_HOST,
-      port:Number(process.env.DB_PORT),
-      username: process.env.DB_USERNAME,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
+      host:'localhost',
+      port:3306,
+      username: 'root',
+      password: '',
+      database: 'api_v3',
       autoLoadEntities:true,
       synchronize: true,
       migrations: [],
