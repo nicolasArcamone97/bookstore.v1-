@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg nav-custom" data-bs-theme="dark" *ngIf="mostrarNavegacion">
+<nav class="navbar navbar-expand-lg nav-custom" data-bs-theme="dark">
     <div class="container-fluid contenedor-nav">
       <a class="navbar-brand" href="/inicio">
         <span>
@@ -18,18 +18,18 @@
            <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">categorias</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item"  style="cursor: pointer;" *ngFor="let categoria of listCategorias" [routerLink]="['/categoria', categoria.id]">{{categoria.nombre}}</a>
+              <a class="dropdown-item"  style="cursor: pointer;"></a>
             </div>
           </li>
 
           <li class="nav-item me-3 me-lg-1">
-            <a class="nav-link" [routerLink]="['/favoritos']"> Favoritos
+            <a class="nav-link"> Favoritos
               <span><i class="font-size: 22px; box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.5);"></i></span>
             </a>
           </li>
 
           <li class="nav-item me-3 me-lg-1">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit" [routerLink]="['/carro', 1]" ><i class="bi bi-cart-fill"></i></button>
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit" ><i class="bi bi-cart-fill"></i></button>
           </li>
         </ul>
         <form class="d-flex">

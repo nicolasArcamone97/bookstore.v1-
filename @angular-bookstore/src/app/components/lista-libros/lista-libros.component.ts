@@ -33,10 +33,9 @@ export class ListaLibrosComponent {
   // lo usamos para realizar una accion de inicializacion una vez que el componente ha sido inicializado en angular osea si quieres visualizar algo ni bien inicias un compopentne 
   // deberiamos usar ngOnInit()
   ngOnInit(): void {
-    console.log(this.obtenerLibros())
+    this.obtenerLibros()
     this.obtenerUsuario()
     this.obtenerCarro(1)
-    
   }
 
   
@@ -64,7 +63,6 @@ export class ListaLibrosComponent {
   obtenerUsuario(){
     this.usuarioService.getUser().subscribe((data: Usuario) => {
       this.usuarioActivo = data
-      this.carroActivo = data.carro
     })
   }
 

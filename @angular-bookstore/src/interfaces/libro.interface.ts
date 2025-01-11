@@ -7,5 +7,5 @@ export interface Libro {
     descripcion: string,
     precio: number,
     portada: string
-    categorias: Categoria[]
+    categorias?: Categoria[]
 }

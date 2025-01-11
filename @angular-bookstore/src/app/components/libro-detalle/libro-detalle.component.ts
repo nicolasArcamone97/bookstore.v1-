@@ -41,7 +41,7 @@ export class LibroDetalleComponent implements OnInit {
   obtenerUsuario(){
     this.serviceUsuario.getUser().subscribe((data:Usuario) => {
       this.usuarioActivo = data
-      this.carroActivo = data.carro
+      
     })
   }
 

@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Usuario } from 'src/interfaces/usuari.interface';
+import { Carro } from 'src/interfaces/carro.interface';
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +13,22 @@ export class UsuarioService {
   private baseUrl = 'http://localhost:3001/api/user'
 
   usuario?: Usuario
+  carro?: Carro
+  
+  
+  constructor(private httpClient: HttpClient) { 
 
-  
-  
-  constructor(private httpClient: HttpClient) { }
+    this.usuario = {
+      id:1,
+      nombre:"Nicolás Arcamone",
+      email:"nicolas@gmail.com",
+      password:"12345678",
+      libros: []
+    }
 
-  
+  }
+
+
 
 
   //funcion para implementar en todos los componentes el mismo usuario de forma estatica hasta seguir avanzando 
