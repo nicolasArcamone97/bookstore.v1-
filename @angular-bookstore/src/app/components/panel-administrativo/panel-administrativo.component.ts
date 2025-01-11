@@ -41,7 +41,6 @@ export class PanelAdministrativoComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.listaDeLibros()
 
 
 
@@ -96,15 +95,6 @@ export class PanelAdministrativoComponent implements OnInit {
   }
 
    
-  
-  
-  // lista de libros 
-  listaDeLibros(){
-    return this._serviceLibros.obtenerLibros().subscribe((data: Libro[]) => {
-        this.libros = data
-    })
-  }
-
 
 
 

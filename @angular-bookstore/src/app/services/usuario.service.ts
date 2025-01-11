@@ -12,7 +12,11 @@ export class UsuarioService {
 
   usuario?: Usuario
 
+  
+  
   constructor(private httpClient: HttpClient) { }
+
+  
 
 
   //funcion para implementar en todos los componentes el mismo usuario de forma estatica hasta seguir avanzando 

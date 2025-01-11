@@ -27,25 +27,22 @@ export class ListaLibrosComponent {
   constructor( private _serviceLibros : LibrosService,
               private usuarioService: UsuarioService,
               private carroService: CarritoService,
-                private router: Router){
-     this.obtenerLibros()      //llama el metodo para obtener los libros cuando se inicia, de esta forma no uso el OnInit
-  }
+                private router: Router){}
 
 
   // lo usamos para realizar una accion de inicializacion una vez que el componente ha sido inicializado en angular osea si quieres visualizar algo ni bien inicias un compopentne 
   // deberiamos usar ngOnInit()
   ngOnInit(): void {
-    this.obtenerLibros()
+    console.log(this.obtenerLibros())
     this.obtenerUsuario()
     this.obtenerCarro(1)
+    
   }
 
   
   // opbtengo los libros de un servicio 
   obtenerLibros(): void{
-    this._serviceLibros.obtenerLibros().subscribe((data:Libro[])=> {
-      this.libros = data
-    })
+    this._serviceLibros.obtenerLibros()
   }
 
 
