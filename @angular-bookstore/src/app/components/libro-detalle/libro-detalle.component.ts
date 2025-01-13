@@ -34,15 +34,6 @@ export class LibroDetalleComponent implements OnInit {
      })
    })
 
-   this.obtenerUsuario()
-  }
-
-
-  obtenerUsuario(){
-    this.serviceUsuario.getUser().subscribe((data:Usuario) => {
-      this.usuarioActivo = data
-      
-    })
   }
 
 

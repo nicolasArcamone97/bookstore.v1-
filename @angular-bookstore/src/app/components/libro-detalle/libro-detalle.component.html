@@ -3,7 +3,7 @@
     <div class="row row-general" *ngIf="libroSeleccionado">
         <!-- arranca col 1 de 3 -->
         <div class="col-xl-4 col-imagen" >
-            <img [src]="libroSeleccionado.portada" alt="">
+            <img [src]="libroSeleccionado" alt="">
         </div>
         <!-- termina col 1 de 3 -->
 
@@ -12,15 +12,15 @@
             <!-- arranca fila  -->
             <div class="row row-detalle-libro">
                 <div class="col col-titulo">
-                    <p>{{libroSeleccionado.titulo}}</p>
+                    <p>{{libroSeleccionado}}</p>
                 </div>
                 
                 <div class="col col-precio" style="font-family: 'Raleway'  ;">
-                    <p>${{libroSeleccionado.precio | number:'1.2'}}</p>
+                    <p>${{libroSeleccionado}}</p>
                 </div>
 
                 <div class="col col-descripcion">
-                    <p>{{libroSeleccionado.descripcion}}</p>
+                    <p>{{libroSeleccionado}}</p>
                 </div>
 
                 <div class="col col-caracteristicas">
@@ -67,8 +67,8 @@
 
                 <div class="col col-compra-botones">
                     <!-- <button class="btn btn-primary">Comprar</button> -->
-                    <button class="btn btn-primary" (click)="agregarAlCarro(carroActivo.id, libroSeleccionado.id)" >Agregar al carro</button>
-                    <button class="btn btn-primary" [routerLink]="['/carro', carroActivo.id]">Ir al carro</button>
+                    <button class="btn btn-primary" >Agregar al carro</button>
+                    <button class="btn btn-primary" >Ir al carro</button>
                 </div>
 
             </div>
@@ -78,7 +78,7 @@
     </div>
     <!-- termina fila -->
 </div>
-<router-outlet></router-outlet>
+
 
 
 

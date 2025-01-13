@@ -34,14 +34,14 @@ export class ListaLibrosComponent {
   // deberiamos usar ngOnInit()
   ngOnInit(): void {
     this.obtenerLibros()
-    this.obtenerUsuario()
     this.obtenerCarro(1)
+    console.log(this.libros)
   }
 
   
   // opbtengo los libros de un servicio 
   obtenerLibros(): void{
-    this._serviceLibros.obtenerLibros()
+    this.libros = this._serviceLibros.obtenerLibros()
   }
 
 
@@ -59,10 +59,6 @@ export class ListaLibrosComponent {
 
  
 
-  // obtener usuario por id 
-  obtenerUsuario(){
-    this.usuarioService.obtenerUsuario(1)
-  }
 
   agregarAlCarro(carroId:number,libroId:number){
     this.carroService.asignarLibro(carroId,libroId).subscribe(() => {

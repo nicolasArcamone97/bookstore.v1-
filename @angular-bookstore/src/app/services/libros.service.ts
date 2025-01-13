@@ -22,7 +22,7 @@ export class LibrosService {
         "autor": "Jorge Luis Borges",
         "descripcion": "Una colección de cuentos que exploran conceptos de infinito, realidad y tiempo.",
         "precio": 1500,
-        "portada": "https://example.com/el-aleph.jpg",
+        "portada": "https://dcdn.mitiendanube.com/stores/004/088/117/products/526276-adb839557331a6c0bd17273545748038-1024-1024.webp",
         "categorias": [
           {
             "id": 1,
@@ -44,7 +44,7 @@ export class LibrosService {
         "autor": "Julio Cortázar",
         "descripcion": "Una novela innovadora que puede leerse de diversas maneras.",
         "precio": 2000,
-        "portada": "https://example.com/rayuela.jpg",
+        "portada": "https://dcdn.mitiendanube.com/stores/004/088/117/products/619059-83dc581c0844c8b9d617274576553916-1024-1024.webp",
         "categorias": [
           {
             "id": 3,
@@ -66,7 +66,7 @@ export class LibrosService {
         "autor": "Ricardo Güiraldes",
         "descripcion": "Una obra clásica de la literatura gauchesca argentina.",
         "precio": 1800,
-        "portada": "https://example.com/don-segundo-sombra.jpg",
+        "portada": "https://dcdn.mitiendanube.com/stores/004/088/117/products/707247-0e1c0d3b21b32939c417275472435014-1024-1024.webp",
         "categorias": [
           {
             "id": 5,
@@ -88,7 +88,7 @@ export class LibrosService {
         "autor": "José Hernández",
         "descripcion": "El poema épico que define la literatura gauchesca.",
         "precio": 1200,
-        "portada": "https://example.com/martin-fierro.jpg",
+        "portada": "https://dcdn.mitiendanube.com/stores/004/088/117/products/665662-fc5c5c361bf2bd6cdb17274863220864-1024-1024.webp",
         "categorias": [
           {
             "id": 5,
@@ -110,7 +110,7 @@ export class LibrosService {
         "autor": "Rodolfo Walsh",
         "descripcion": "Una investigación pionera del periodismo narrativo sobre crímenes políticos.",
         "precio": 1700,
-        "portada": "https://example.com/operacion-masacre.jpg",
+        "portada": "https://dcdn.mitiendanube.com/stores/004/088/117/products/691501-a2003e092dab5749f617285648800468-1024-1024.webp",
         "categorias": [
           {
             "id": 8,
@@ -134,8 +134,9 @@ export class LibrosService {
     return this.listLibros
   }
 
-  public obtenerLibro(libroId:number): Observable<Libro>{
-    return this.httpClient.get<Libro>(`${this.baseUrl}/${libroId}`)
+  public obtenerLibro(libroId: number): any {
+    const libroEncontrado = this.listLibros.find(libro => libro.id === libroId); 
+    return libroEncontrado; 
   }
 
   public crearLibro(libro:Libro): Observable<void> {

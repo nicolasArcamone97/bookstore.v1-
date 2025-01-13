@@ -25,24 +25,13 @@ export class CategoriaComponent implements OnInit{
               private route: ActivatedRoute){}
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.obtenerCategoria(params['id'])
-    })
-    this.obtenerUsuario()
+    // this.route.params.subscribe(params => {
+    //   this.obtenerCategoria(params['id'])
+    // })
+   
   }
 
-  obtenerCategoria(id:number){
-    return this.serviceCategoria.obtenerCategoria(id).subscribe( data => {
-      this.categoria = data
-    })
-  }
-
-  obtenerUsuario(){
-    this.serviceUsuario.getUser().subscribe( data => {
-      this.usuarioActivo = data
-    })
-  }
-
+ 
 
   agregarFavoritos(usuarioId:number, libroId:number){
     this.serviceUsuario.asignarLibro(usuarioId, libroId).subscribe({

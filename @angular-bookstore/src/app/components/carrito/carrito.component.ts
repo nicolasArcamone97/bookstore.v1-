@@ -43,11 +43,11 @@ export class CarritoComponent implements OnInit{
   }
 
 
-  obtenerUsuario(){
-    this.userService.getUser().subscribe(data => {
-      this.usuarioActivo = data
-    })
-  }
+  // obtenerUsuario(){
+  //   this.userService.getUser().subscribe(data => {
+  //     this.usuarioActivo = data
+  //   })
+  // }
 
   eliminarLibro(carroId:number,libroId:number){
     this.carroService.eliminarLibro(carroId,libroId).subscribe(data => {

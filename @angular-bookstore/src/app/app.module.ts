@@ -10,7 +10,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LibroDetalleComponent } from './components/libro-detalle/libro-detalle.component';
 import { ListaLibrosComponent } from './components/lista-libros/lista-libros.component';
 import { CategoriaComponent } from './components/categoria/categoria.component';
-import { PanelAdministrativoComponent } from './components/panel-administrativo/panel-administrativo.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ListFavoritosComponent } from './components/list-favoritos/list-favoritos.component';
 import { CarritoComponent } from './components/carrito/carrito.component'
@@ -27,7 +26,6 @@ import { AuhtComponent } from './components/auht/auht.component'
     LibroDetalleComponent,
     ListaLibrosComponent,
     CategoriaComponent,
-    PanelAdministrativoComponent,
     ListFavoritosComponent,
     CarritoComponent,
     AuhtComponent,
