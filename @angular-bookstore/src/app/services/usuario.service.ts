@@ -41,8 +41,9 @@ export class UsuarioService {
     return this.httpClient.get<Usuario[]>(`${this.baseUrl}`)
   }
 
-  obtenerUsuario(id:number): Observable<Usuario> {
-    return this.httpClient.get<Usuario>(`${this.baseUrl}/${id}`)
+  obtenerUsuario(id:number){
+    const usuario = this.usuario?.id
+    return usuario
   }
 
   asignarLibro(usuarioId:number, libroId:number):Observable<void>{

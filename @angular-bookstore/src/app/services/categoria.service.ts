@@ -64,8 +64,11 @@ export class CategoriaService {
   }
 
 
-  obtenerCategoria(id:number): Observable<Categoria> {
-    return this.httpCliente.get<Categoria>(`${this.baseUrl}/${id}`)
+  obtenerCategoria(id:number){
+    const categoriaEncontrada = this.listCategorias.find( cate => {
+      cate.id == id
+    })
+    return categoriaEncontrada
   }
   
 

@@ -10,9 +10,7 @@ import { Libro } from 'src/interfaces/libro.interface';
 })
 export class ListFavoritosComponent implements OnInit{
 
-  // varible vacia tipo user
-  usuarioActivo?: Usuario 
-
+  
   // lista vacia de libros
   libros?: Libro[] 
 

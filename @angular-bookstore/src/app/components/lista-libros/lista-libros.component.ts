@@ -61,9 +61,7 @@ export class ListaLibrosComponent {
 
   // obtener usuario por id 
   obtenerUsuario(){
-    this.usuarioService.getUser().subscribe((data: Usuario) => {
-      this.usuarioActivo = data
-    })
+    this.usuarioService.obtenerUsuario(1)
   }
 
   agregarAlCarro(carroId:number,libroId:number){
