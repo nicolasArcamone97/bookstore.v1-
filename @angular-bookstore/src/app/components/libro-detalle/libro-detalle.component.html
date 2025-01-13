@@ -1,9 +1,9 @@
-<div class="container-fluid contenedor-detalle-libro" *ngIf="carroActivo">
+<div class="container-fluid contenedor-detalle-libro">
     <!-- arranca fila  -->
     <div class="row row-general" *ngIf="libroSeleccionado">
         <!-- arranca col 1 de 3 -->
         <div class="col-xl-4 col-imagen" >
-            <img [src]="libroSeleccionado" alt="">
+            <img [src]="libroSeleccionado.portada" alt="">
         </div>
         <!-- termina col 1 de 3 -->
 
@@ -12,15 +12,15 @@
             <!-- arranca fila  -->
             <div class="row row-detalle-libro">
                 <div class="col col-titulo">
-                    <p>{{libroSeleccionado}}</p>
+                    <p>{{libroSeleccionado.titulo}}</p>
                 </div>
                 
                 <div class="col col-precio" style="font-family: 'Raleway'  ;">
-                    <p>${{libroSeleccionado}}</p>
+                    <p>${{libroSeleccionado.precio}}</p>
                 </div>
 
                 <div class="col col-descripcion">
-                    <p>{{libroSeleccionado}}</p>
+                    <p>{{libroSeleccionado.descripcion}}</p>
                 </div>
 
                 <div class="col col-caracteristicas">
@@ -78,9 +78,6 @@
     </div>
     <!-- termina fila -->
 </div>
-
-
-
 
 
 

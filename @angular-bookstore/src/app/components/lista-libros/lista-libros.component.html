@@ -40,7 +40,7 @@
                               <div class="card-fav">
                                   <i class="bi bi-bookmark-plus-fill" style="cursor: pointer;"></i>
                               </div>
-                              <img [src]="libro.portada"  class="card-img-top" style="cursor: pointer" >
+                              <img [src]="libro.portada"  class="card-img-top" style="cursor: pointer" [routerLink]="['/libro', libro.id]">
                               <div class="card-body">
                                     <h5 class="card-title">{{ libro.titulo }} - {{ libro.autor }}</h5>
                                     <p class="card-precio">${{ libro.precio}}</p>

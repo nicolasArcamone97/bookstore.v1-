@@ -24,18 +24,18 @@ export class LibroDetalleComponent implements OnInit {
 
  constructor(private _route: ActivatedRoute,
             private _serviceLibro: LibrosService,
-            private serviceUsuario: UsuarioService,
             private serviceCarrito: CarritoService){}
 
  ngOnInit(): void {
-   this._route.params.subscribe(params => {
-     this._serviceLibro.obtenerLibro(Number(params['id'])).subscribe((data: Libro) => {
-        this.libroSeleccionado = data
-     })
-   })
-
+    this.obtenerLibroUrl()
   }
 
+
+  obtenerLibroUrl(){
+    this._route.params.subscribe(params => {
+      this.libroSeleccionado = this._serviceLibro.obtenerLibro(Number(params['id']))
+    })
+  }
 
   agregarAlCarro(carroId:number, libroId:number){
     this.serviceCarrito.asignarLibro(carroId, libroId).subscribe(  () => {})

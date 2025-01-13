@@ -1,9 +1,9 @@
-<div class="container-fluid contenedor-general" *ngIf="usuarioActivo">
+<div class="container-fluid contenedor-general">
     <div class="row row-general">
         <div class="col col-lista-libros">
-           <div class="row row-lista-libros" *ngIf="categoria">
+           <div class="row row-lista-libros" *ngFor="let categoria of listCategorias">
             <div class="titulo">
-                <h1>{{categoria}}</h1>
+                <h1>{{categoria.nombre}}</h1>
             </div>
 
 

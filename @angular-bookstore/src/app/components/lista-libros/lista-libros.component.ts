@@ -34,8 +34,7 @@ export class ListaLibrosComponent {
   // deberiamos usar ngOnInit()
   ngOnInit(): void {
     this.obtenerLibros()
-    this.obtenerCarro(1)
-    console.log(this.libros)
+
   }
 
   
@@ -57,31 +56,9 @@ export class ListaLibrosComponent {
 
   }
 
- 
-
-
-  agregarAlCarro(carroId:number,libroId:number){
-    this.carroService.asignarLibro(carroId,libroId).subscribe(() => {
-      this.obtenerCarro(carroId)
-    })
-  }
 
 
 
-  obtenerCarro(carroId:number) {
-    this.carroService.obtenerCarro(carroId).subscribe((data:Carro) => {
-      this.carroActivo = data
-      this.carroActivo.total = this.carroActivo.libros.reduce((acumulator,elemento) => {
-        return acumulator + elemento.precio
-      }, 0)
-    })
-  }
-
-  eliminarLibro(carroId:number,libroId:number){
-    this.carroService.eliminarLibro(carroId,libroId).subscribe(data => {
-      this.obtenerCarro(carroId)
-    })
-  }
 
 
 

@@ -18,6 +18,7 @@ export class CategoriaComponent implements OnInit{
 
   categoria?: Categoria
 
+  listCategorias?: Categoria[]
   librosCategoria?: Libro[]
 
   constructor(private serviceCategoria: CategoriaService,
@@ -26,11 +27,15 @@ export class CategoriaComponent implements OnInit{
 
   ngOnInit(): void {
     // this.route.params.subscribe(params => {
-    //   this.obtenerCategoria(params['id'])
+    //   this.categoria = this.serviceCategoria.obtenerCategoria(params['id'])
     // })
-   
+   this.obtenerCategorias()
   }
 
+  obtenerCategorias(){
+    this.listCategorias = this.serviceCategoria.obtenerCategorias()
+    console.log(this.listCategorias)
+  }
  
 
   agregarFavoritos(usuarioId:number, libroId:number){

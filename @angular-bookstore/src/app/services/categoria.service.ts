@@ -59,15 +59,14 @@ export class CategoriaService {
 
 
 
-  obtenerCategorias(): Categoria[]{
+  obtenerCategorias(){
     return this.listCategorias
   }
 
 
   obtenerCategoria(id:number){
-    const categoriaEncontrada = this.listCategorias.find( cate => {
-      cate.id == id
-    })
+    const categoriaEncontrada = this.listCategorias.find( cate => cate.id === id
+    )
     return categoriaEncontrada
   }
   
