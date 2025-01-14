@@ -50,7 +50,7 @@
                           </div>
                         </li>
                         
-                        <li><p>{{carroActivo}}</p></li>
+                        <li><p>{{libro.precio}}</p></li>
   
                         <li><i class="bi bi-trash3" style="font-size: 18px; cursor: pointer;"></i></li>
   
@@ -76,8 +76,8 @@
             </div>
 
               <div class="col col-montos">
-                  <div class="col subtotal">Subtotal:</div>
-                  <div class="col monto">${{carroActivo}}</div>
+                  <div class="col subtotal">Subtotal: {{carroActivo.total}}</div>
+                  <div class="col monto">${{carroActivo.total}}</div>
               </div>
 
               <div class="col col-calcular">
@@ -86,7 +86,7 @@
 
               <div class="col col-total">
                 <div class="col subtotal">Total:</div>
-                <div class="col monto">${{carroActivo}}</div>
+                <div class="col monto">${{carroActivo.total}}</div>
               </div>
 
               <div class="col col-btn">

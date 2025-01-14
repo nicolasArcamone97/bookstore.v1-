@@ -5,6 +5,6 @@ export interface Carro {
     id:number,
     total: number,
     cantidad: number,
-    usuario: Usuario
+    // usuario: Usuario
     libros: Libro[]
 }

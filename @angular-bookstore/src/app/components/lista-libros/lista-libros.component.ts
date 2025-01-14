@@ -34,7 +34,7 @@ export class ListaLibrosComponent {
   // deberiamos usar ngOnInit()
   ngOnInit(): void {
     this.obtenerLibros()
-
+    this.obtenerCarro()
   }
 
   
@@ -56,6 +56,9 @@ export class ListaLibrosComponent {
 
   }
 
+  obtenerCarro() {
+    this.carroActivo = this.carroService.obtenerCarro()
+  }
 
 
 

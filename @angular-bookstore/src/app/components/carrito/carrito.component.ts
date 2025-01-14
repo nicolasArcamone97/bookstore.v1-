@@ -27,19 +27,20 @@ export class CarritoComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.obtenerCarro(1)
+    this.obtenerCarro()
   }
 
 
-  obtenerCarro(carroId:number){
-    this.carroService.obtenerCarro(carroId).subscribe(data => {
-      this.carroActivo = data
-      this.libros = data.libros
-      this.carroActivo.total = this.libros.reduce((acumulator,elemento) => {
-        return acumulator + elemento.precio
-      }, 0)
-    })
-
+  obtenerCarro(){
+    // this.carroService.obtenerCarro(carroId).subscribe(data => {
+    //   this.carroActivo = data
+    //   this.libros = data.libros
+    //   this.carroActivo.total = this.libros.reduce((acumulator,elemento) => {
+    //     return acumulator + elemento.precio
+    //   }, 0)
+    // })
+    this.carroActivo = this.carroService.obtenerCarro()
+    this.libros = this.carroActivo?.libros
   }
 
 
@@ -49,11 +50,11 @@ export class CarritoComponent implements OnInit{
   //   })
   // }
 
-  eliminarLibro(carroId:number,libroId:number){
-    this.carroService.eliminarLibro(carroId,libroId).subscribe(data => {
-      this.obtenerCarro(carroId)
-    })
-  }
+  // eliminarLibro(carroId:number,libroId:number){
+  //   this.carroService.eliminarLibro(carroId,libroId).subscribe(data => {
+  //     this.obtenerCarro(carroId)
+  //   })
+  // }
 
 
 

@@ -37,15 +37,15 @@ export class LibroDetalleComponent implements OnInit {
     })
   }
 
-  agregarAlCarro(carroId:number, libroId:number){
-    this.serviceCarrito.asignarLibro(carroId, libroId).subscribe(  () => {})
-    Swal.fire({
-      text: 'Tu libro fue agregado al carrito',
-      icon: 'success',
-      confirmButtonText: 'Aceptar'
-    });
+  // agregarAlCarro(carroId:number, libroId:number){
+  //   this.serviceCarrito.asignarLibro(carroId, libroId).subscribe(  () => {})
+  //   Swal.fire({
+  //     text: 'Tu libro fue agregado al carrito',
+  //     icon: 'success',
+  //     confirmButtonText: 'Aceptar'
+  //   });
 
-  }
+  // }
 
 
 
