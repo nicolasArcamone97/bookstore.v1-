@@ -1,0 +1,24 @@
+.nav-custom {
+    background-color: #796d5c;
+    height: 7em;
+    box-shadow: 0px 1px 1px 4px rgba(0, 0, 0, 0.5);
+    /* 928b77 */
+    /* #8e8c72; */
+   
+}
+
+.contenedor-nav img {
+    background-color:  #37797C
+}
+
+
+
+input {
+    border-radius: 0;
+}
+
+.btn {
+    background-color: #241e16;
+    border-radius: 0;
+    border: #241e16;
+}

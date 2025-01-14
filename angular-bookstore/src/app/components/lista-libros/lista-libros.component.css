@@ -1,0 +1,267 @@
+*{
+    font-family: "Raleway"
+}
+
+
+.contenedor-general {
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 5px 5px 8px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(rgba(78, 78, 78, 0.5),rgba(54, 54, 54, 0.5)), url('https://i.pinimg.com/564x/20/09/a5/2009a5d885f8383ea725da3665b6985d.jpg');
+}
+
+/* url('https://i.pinimg.com/564x/9f/00/53/9f0053e017e427eed4fc18d5ac2bb9b3.jpg'); */
+.row-general {
+    display: flex;
+    width: 94%;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0px 1px 3px 3px rgba(0, 0, 0, 0.5);
+    background:#DCDDDB;
+    margin-top: 2px;
+}
+
+
+.col-titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.col-titulo p {
+    font-weight: 700;
+    font-size: 30px;
+    color: #f5f4f4;
+}
+
+
+.col-lista-libros {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.row-lista-libros{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.col-libros{
+    display: flex;
+    justify-content: center;
+    margin-top:2em;
+    margin-bottom: 2em;
+}
+
+
+
+
+/* card de libros */
+
+.card {
+    position: relative;
+    height: auto;
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    background-color: #e6e6e6;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    border-radius: 0;
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    
+}
+
+.card:hover {
+    transform: scale(1.0); /* Aumenta ligeramente el tamaño al pasar el mouse */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    width: 260px;
+    max-width: 100%;
+    max-height: 360px;
+    border-radius: 0;
+    transition: transform 0.5s ease; /* Agrega una transición suave para la imagen */
+}
+
+.card-body {
+    position: absolute;
+    left: 0;
+    bottom: -100%; /* Inicialmente, oculta el cuerpo de la tarjeta fuera de la pantalla */
+    width: 100%; /* Ancho del cuerpo de la tarjeta */
+    background-color: #37797C;
+    transition: bottom 0.7s ease; /* Agrega una transición suave al mostrar/ocultar el cuerpo */
+    display: flex;
+    flex-direction: column;
+    max-height: 200px;
+    max-width: 300px;
+    
+}
+
+
+
+
+.card:hover .card-body {
+    bottom: 0; /* Muestra el cuerpo de la tarjeta cuando se pasa el mouse sobre la tarjeta */
+}
+
+.card-body .card-title {
+    display: flex;   
+    font-family: "EB Garamond", serif;
+    font-weight: 800;
+    font-size: 18px; /* Tamaño del título */
+    white-space: inherit; /* Para que el texto no se divida en múltiples líneas */ 
+    text-overflow: ellipsis; /* Para que se muestre un elipsis (...) si el texto es demasiado largo */
+    overflow: visible;
+    color: rgb(240, 235, 235) ;
+}
+
+.card-body p {
+    font-size: 16px; /* Tamaño de la descripción */
+    max-width: 200px; /* Ancho máximo de la descripción */
+    font-weight: 800;
+    font-family: "EB Garamond", serif;
+    color: rgb(231, 229, 229);
+    margin-bottom: 10px; /* Agregar margen inferior para separar del botón */
+}
+
+
+.card-fav {
+    position: absolute; /* Posiciona el icono de estrella de manera absoluta */
+    top: -2px; /* Ajusta la distancia desde la parte superior de la tarjeta */
+    right: 10px; /* Ajusta la distancia desde el borde derecho de la tarjeta */
+    z-index: 1; /* Asegura que el icono esté sobre la imagen */
+    color: #796d5c; /* Cambia el color del icono a blanco para que sea visible */
+    
+}
+
+.card-fav i{
+    font-size: 25px;
+}
+
+.card-fav:active {
+    transform: scale(0.95);
+}
+
+
+
+
+
+.btn {
+    background-color: #241e16;
+    border-radius: 0;
+    border: #241e16;
+    max-width: 50%;
+}
+
+
+
+/* col carrito */
+.row-carrito {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    margin: 1em;
+    border: 1px solid;
+    height: fit-content;
+}
+
+.col-titulo-carrito {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    max-height: 50px;
+    border-bottom: rgb(167, 163, 163) 1px solid;
+    max-height: 50px;
+}
+
+.col-titulo-carrito h2 {
+    margin-top: 0.5em; /* Ajuste del espacio del título */
+}
+
+/* col productos carrito */
+.col-productos {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: rgb(167, 163, 163) 1px solid;
+    overflow-x: auto;
+}
+
+
+.row-productos {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    transition: 1s;
+}
+
+.row-productos:hover {
+    transform: scale(1.0);
+    background-color: #4a888b;
+}
+
+.img-producto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.img-producto img {
+    max-height: 100px;
+    width: 100%; /* Asegura que la imagen se ajuste al contenedor */
+    
+}
+
+.col-precio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 50px;
+ 
+}
+
+.btn-eliminar {
+    display: flex;
+    justify-content: center;
+    max-height: 50px;
+    align-items: center;
+}
+
+/* col productos carrito */
+.col-total {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    max-height: 100px;
+    
+}
+
+.total {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    width: 100%;
+}
+
+.col-total button {
+    margin-bottom: 2em;
+}

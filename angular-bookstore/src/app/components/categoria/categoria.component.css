@@ -1,0 +1,160 @@
+*{
+    font-family: "Raleway"
+}
+
+
+.contenedor-general {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0px 5px 5px 8px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(rgba(78, 78, 78, 0.5),rgba(54, 54, 54, 0.5)), url('https://i.pinimg.com/564x/20/09/a5/2009a5d885f8383ea725da3665b6985d.jpg');
+    align-items: center;
+}
+
+/* url('https://i.pinimg.com/564x/9f/00/53/9f0053e017e427eed4fc18d5ac2bb9b3.jpg'); */
+.row-general {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0px 1px 3px 3px rgba(0, 0, 0, 0.5);
+    background:#DCDDDB;
+}
+
+.titulo h1{
+    text-align: center;
+    justify-content: center;
+    margin-top: 1em;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
+.col-titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.col-titulo p {
+    font-weight: 700;
+    font-size: 30px;
+    color: #f5f4f4;
+}
+
+
+.col-lista-libros {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.row-lista-libros{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.col-libros{
+    display: flex;
+    justify-content: center;
+    margin-top:2em;
+    margin-bottom: 2em;
+}
+
+
+
+
+/* card de libros */
+
+.card {
+    position: relative;
+    height: auto;
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    background-color: #e6e6e6;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    border-radius: 0;
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+    transform: scale(1.0); /* Aumenta ligeramente el tamaño al pasar el mouse */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    width: 260px;
+    max-width: 100%;
+    max-height: 400px;
+    border-radius: 0;
+    transition: transform 0.5s ease; /* Agrega una transición suave para la imagen */
+}
+
+.card-body {
+    position: absolute;
+    left: 0;
+    bottom: -100%; /* Inicialmente, oculta el cuerpo de la tarjeta fuera de la pantalla */
+    width: 100%; /* Ancho del cuerpo de la tarjeta */
+    background-color: rgb(211, 153, 153);
+    transition: bottom 0.7s ease; /* Agrega una transición suave al mostrar/ocultar el cuerpo */
+    display: flex;
+    flex-direction: column;
+    max-height: 200px;
+    max-width: 300px;
+}
+
+.card:hover .card-body {
+    bottom: 0; /* Muestra el cuerpo de la tarjeta cuando se pasa el mouse sobre la tarjeta */
+}
+
+.card-body .card-title {
+    display: flex;   
+    font-family: "EB Garamond", serif;
+    font-weight: 800;
+    font-size: 18px; /* Tamaño del título */
+    white-space: inherit; /* Para que el texto no se divida en múltiples líneas */ 
+    text-overflow: ellipsis; /* Para que se muestre un elipsis (...) si el texto es demasiado largo */
+    overflow: visible;
+}
+
+.card-body p {
+    font-size: 16px; /* Tamaño de la descripción */
+    max-width: 200px; /* Ancho máximo de la descripción */
+    font-weight: 800;
+    font-family: "EB Garamond", serif;
+    color: black;
+    margin-bottom: 10px; /* Agregar margen inferior para separar del botón */
+}
+
+.card-body a {
+    display: flex;
+    justify-content: end;
+    font-size: 30px;
+    margin-top: auto; /* Mover el botón hacia abajo para que no se superponga con el contenido */
+}
+
+.card-body .bi {
+    color: #1e2226;
+    border: 10px;
+}
+
+.card-body .bi:hover {
+    color: #eeec8a;
+}
+
+.btn {
+    background-color: #241e16;
+    border-radius: 0;
+    border: #241e16;
+    max-width: 50%;
+}

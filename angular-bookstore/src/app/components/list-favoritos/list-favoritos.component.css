@@ -1,0 +1,171 @@
+
+.contenedor-general {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0px 5px 5px 8px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(rgba(116, 115, 115, 0.7),rgba(54, 54, 54, 0.7)), url('https://i.pinimg.com/564x/9f/00/53/9f0053e017e427eed4fc18d5ac2bb9b3.jpg');
+    align-items: center;
+}
+
+
+
+.row-general {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    box-shadow: 0px 1px 3px 3px rgba(0, 0, 0, 0.5);                                    
+    background:#DCDDDB; 
+    min-height: 360px;
+}
+
+
+.col-titulo {
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.col-titulo p {
+    font-weight: 700;
+    font-size: 30px;
+    color: #4d5051;
+}
+
+
+.col-lista-libros {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.row-lista-libros {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+
+
+
+
+.col-libros {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* margin: 2em; */
+}
+
+
+
+.card {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    /* background:#a19d92; */
+    background-color:  #37797C;
+    border-radius: 0;
+    margin: 1em;
+    transition: box-shadow 0.0s ease-in-out; 
+}
+
+.card:hover {
+    transform: scale(1.01);                               
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.card-img-top {
+    width: 80%;
+    max-width: 180px;
+    max-height: 260px;
+    border-radius: 0;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    max-height: 260px;
+    max-width: 260px;
+    padding: 10px;
+}
+
+
+.card-body .card-title {
+    display: flex;
+    justify-content: center;
+    font-family: "EB Garamond", serif;
+    color:#cfcccb;
+    font-weight: 800;
+    font-size: 15px; /* Tamaño del título */
+    white-space:inherit;/* Para que el texto no se divida en múltiples líneas */ 
+    text-overflow: ellipsis; /* Para que se muestre un elipsis (...) si el texto es demasiado largo */
+    overflow:visible;
+}
+
+
+
+
+
+
+
+.card-body .card-text {
+     font-size: 13px; /* Tamaño de la descripción */
+     max-width: 300px; /* Ancho máximo de la descripción */
+     height: 200px;
+     max-height: 200px; /* Altura máxima de la descripción */
+     overflow: hidden; /* Para que el texto que sobrepase la altura máxima se oculte  */
+     text-overflow: ellipsis; /* Para que se muestre un elipsis (...) si el texto es demasiado largo */
+     font-weight: 400;  
+     border-radius: 0; 
+     justify-content: center;
+     color:#cfcfcf; 
+    
+}
+
+.card-precio {
+    display: flex;
+    font-family: "EB Garamond", serif;
+    font-weight: 800;
+    color: #131618;
+    padding-top: 10px ;
+}
+
+
+
+
+
+.card-body a {
+    display: flex;
+    justify-content: end;
+    font-size: 30px;
+    position: relative;
+    bottom: 0; /* Lo coloca en la parte inferior del contenedor */
+} 
+
+
+.card-body .bi {
+    color: #1e2226;
+    border: 10px
+}
+
+.card-body .bi:hover{
+    color: #df655c
+}
+
+.card-body .bi:active {
+    color: #4b83b6;
+} 
+
+

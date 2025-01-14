@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg nav-custom" data-bs-theme="dark">
+    <div class="container-fluid contenedor-nav">
+      <a class="navbar-brand" href="/inicio">
+        <span>
+          <img src="https://r2.easyimg.io/ic4sd6eci/icons8-libros-50.png" alt="">
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav me-auto">
+           <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/inicio">Inicio
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li> 
+           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">categorias</a>
+            <div class="dropdown-menu" *ngFor="let categoria of listCategorias ">
+              <a class="dropdown-item"  style="cursor: pointer;" *ngFor="let categoria of listCategorias ">{{categoria.nombre}}</a>
+            </div>
+          </li>
+
+          <li class="nav-item me-3 me-lg-1">
+            <a class="nav-link" style="cursor: pointer;" routerLink="/favoritos"> Favoritos
+              <span><i class="font-size: 22px; box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.5);"></i></span>
+            </a>
+          </li>
+
+          <li class="nav-item me-3 me-lg-1">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit" [routerLink]="['/carro']" ><i class="bi bi-cart-fill"></i></button>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-sm-2 flex-grow-1" type="search" placeholder="Search">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
+        </form>
+      </div>
+    </div>
+  </nav> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
